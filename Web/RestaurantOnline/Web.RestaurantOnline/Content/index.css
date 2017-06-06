@@ -1,0 +1,289 @@
+﻿.secondNav {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.secondNavFied {
+    left: auto;
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    background-color: white;
+}
+
+.categoryDiv {
+    border: #e0e0e0 1px solid;
+    width: 70%;
+    display: inline-block;
+    background-color: white;
+}
+
+.catgoryItem {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-size: 1vw;
+    width: 90%;
+    cursor: pointer;
+    padding-left: 0.3vw;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    border-radius: 0.3vw;
+}
+
+    .catgoryItem:hover {
+        background-color: #eee;
+    }
+
+.miniShoppingCart {
+    float: right;
+    width: 28%;
+    border: #e0e0e0 1px solid;
+    height: 4vw;
+    box-shadow: 0px 0px 2px #c7c5c5;
+}
+
+.miniShoppingCartName {
+    width: 40%;
+    height: 100%;
+    background-color: black;
+    padding-left: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+    .miniShoppingCartName i {
+        color: white;
+    }
+
+.itemCount {
+    display: inline-block;
+    border: red 1px solid;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    margin-top: -41px;
+    margin-left: -20px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+    color: white;
+}
+
+.totalPrice, .unit {
+    display: inline-block;
+    color: white;
+    font-size: 23px;
+}
+
+.unit {
+    font-size: 20px;
+}
+
+.confirmButton {
+    float: right;
+    display: inline-block;
+    height: 100%;
+    width: 60%;
+    background-color: #dddddd;
+    box-shadow: 0 0 1px #c7c5c5;
+    vertical-align: middle;
+    text-align: center;
+}
+
+    .confirmButton button {
+        border: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #c5c5c5;
+        color: white;
+        font-size: 1.35vw;
+    }
+
+.itemList {
+    width: 100%;
+    border: #c7c5c5 1px solid;
+    border-bottom: #eb7103 2px solid;
+    box-shadow: 0px 0px 2px #c7c5c5;
+    min-height: 50px;
+    overflow-y: auto;
+    background-color: white;
+}
+
+.listTitle {
+    height: 45px;
+    background-color: #f9f9f9;
+    padding-top: 12px;
+    padding-left: 10px;
+}
+
+.clearbutton {
+    color: #eb7103;
+}
+
+.listItem {
+    min-height: 45px;
+    vertical-align: middle;
+    border-top: #c5c5c5 1px solid;
+    margin: 0 5px 5px 5px;
+    padding-top: 10px;
+}
+
+.itemName, .itemOpertaion, .itemPrice {
+    display: inline-block;
+    height: 100%;
+}
+
+.itemName {
+    width: 35%;
+    padding-left: 10px;
+}
+
+.itemOpertaion {
+    width: 40%;
+    position: relative;
+    top: -7px;
+}
+
+.itemPrice {
+    width: 22%;
+    text-align: center;
+    position: relative;
+    top: -7px;
+    color: red;
+}
+
+.itemTotalPrice {
+}
+
+.eName {
+    font-weight: bold;
+    color: black;
+}
+
+.oName {
+    color: gray;
+}
+
+.dishList {
+    margin-top: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dishContainer {
+    width: 71%;
+    margin-top: 4vw;
+}
+
+.dishes {
+    min-height: 30px;
+}
+
+.dishItem {
+    border: #e0e0e0 1px solid;
+    width: 98%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.dishDetail {
+    display: inline-block;
+    margin-left: 2px;
+    padding-top: 0px;
+    width: 80%;
+}
+
+.dishItemImg {
+    width: 100px;
+    height: 100px;
+    vertical-align: top;
+}
+
+.dishPrice {
+    color: red;
+}
+
+.shoppingOpertaion {
+    margin-top: 15px;
+    float: right;
+}
+
+.shoppingButton {
+    display: block;
+    margin-left: 13px;
+    cursor: pointer;
+    background-color: #eb7103;
+    color: #fff;
+    border-radius: 20px;
+    width: 90px;
+}
+
+    .shoppingButton:hover {
+        color: #fff;
+    }
+
+.shoppingCount {
+    width: 100%;
+    padding-left: 12px;
+    display: none;
+}
+
+.minusQty, .addQty, itemQty {
+    display: inline-block;
+}
+
+.minusQty, .addQty {
+    width: 30px;
+    height: 32px;
+    background-color: white;
+    border: #eb7103 1px solid;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.minusQty {
+    border-radius: 50px 0 0 50px;
+}
+
+.addQty {
+    border-radius: 0 50px 50px 0;
+}
+
+.itemQty {
+    background-color: white;
+    /*border-bottom: #eb7103 1px solid;
+    border-top: #eb7103 1px solid;*/
+    height: 32px;
+    width: 30px;
+    margin: 0;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.flyerPoint {
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    background-color: #eb7103;
+}
+
+.placeHolderDiv {
+    display: none;
+}
+
+.dishEName {
+    font-size: 1.2vw;
+}
+
+.dishOName {
+    font-size: 1.1vw;
+}

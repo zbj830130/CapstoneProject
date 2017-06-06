@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f4a40e</color>
+    <color name="colorPrimaryDark">#212121</color>
+    <color name="colorAccent">#448AFF</color>
+    <color name="textColorPrimary">#212121</color>
+    <color name="dishListETitleColor">#000</color>
+    <color name="dishListOTitleColor">#B0B0B0</color>
+    <color name="dishPriceColor">#880000</color>
+    <color name="dishCancelButtonColor">#700000</color>
+    <color name="dishQtyButtonColor">#2196F3</color>
+    <color name="whiteColor">#FFF</color>
+    <color name="blackColor">#000</color>
+    <color name="greenColor">#00CD66</color>
+    <color name="redColor">#CD0000</color>
+    <color name="blueColor">#448AFF</color>
+    <color name="B0GrayColor">#B0B0B0</color>
+    <color name="WaiterConfirmTitleBorderColor">#448AFF</color>
+</resources>

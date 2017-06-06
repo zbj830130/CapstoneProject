@@ -1,0 +1,43 @@
+﻿@model List<Model.RestaurantOnline.DishesModel>
+@{
+    Layout=null;
+}
+
+@if(Model.Count >0){
+	foreach(var dm in Model)
+	{
+        var imgName = dm.Id + ".jpeg";
+        
+        <div  class="dishItem">
+            <img class="dishItemImg" src="/Imgs/products/@imgName"/>
+	        <div class="dishDetail">
+		        @if(dm.EName.Length > 50)
+                {
+                    <span class="eName">@dm.EName.Substring(0,50)...</span>
+                }
+                else
+                {
+                    <span class="eName">@dm.EName</span>
+                }
+                <br>
+                @if(dm.OtherName.Length > 50)
+                {
+                    <span class="oName">@dm.OtherName.Substring(0,50)...</span>
+                }
+                else
+                {
+                    <span class="oName">@dm.OtherName</span>
+                }
+	            <br>
+	            <span id="dishPrice_@dm.Id" class="dishPrice">$@dm.Price</span>
+	            <div class="shoppingOpertaion">
+		            <button type="button" onclick="buyButtonClick('@dm.Id')" id="buy_@dm.Id" class="btn btn-inverse shoppingButton">Buy</button>
+                    <div id="shoppingCount_@dm.Id" class="shoppingCount">
+                        <label class="minusQty" onclick="buyMinuQty(@dm.Id)">-</label><label id="shoppingQty_@dm.Id" class="itemQty">0</label><label class="addQty" onclick="buyAddQty(@dm.Id)">+</label>
+		            </div>
+	            </div>
+		    </div>
+        </div>
+	   
+	}
+}

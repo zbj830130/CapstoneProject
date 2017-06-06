@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{7E4192ED-AF02-488F-A799-2A81D6DDD812}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Data.RestaurantOnline/OrderDao.cs">
+    <Files>
+      <File FileName="Web.RestaurantOnline/Controllers/WebApi/BannersController.cs" Line="21" Column="13" />
+      <File FileName="Web.RestaurantOnline/Controllers/HomeController.cs" Line="180" Column="38" />
+      <File FileName="Web.RestaurantOnline/Controllers/WebApi/DishController.cs" Line="16" Column="10" />
+      <File FileName="Web.RestaurantOnline/Controllers/WebApi/TableController.cs" Line="24" Column="53" />
+      <File FileName="Web.RestaurantOnline/Controllers/WebApi/WaiterController.cs" Line="19" Column="52" />
+      <File FileName="Data.RestaurantOnline/WaiterDao.cs" Line="9" Column="50" />
+      <File FileName="Business.RestaurantOnline/WaiterBuss.cs" Line="20" Column="28" />
+      <File FileName="Web.RestaurantOnline/Controllers/WebApi/OrderController.cs" Line="119" Column="1" />
+      <File FileName="Data.RestaurantOnline/OrderDao.cs" Line="500" Column="1" />
+      <File FileName="Business.RestaurantOnline/OrderBuss.cs" Line="254" Column="17" />
+      <File FileName="Web.RestaurantOnline/Controllers/WebApi/CategoryController.cs" Line="18" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/WebApi.RestaurantOnline/Controllers/HomeController.cs" relfile="WebApi.RestaurantOnline/Controllers/HomeController.cs" line="18" column="1" />
+      <Breakpoint file="/Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Data.RestaurantOnline/OrderDao.cs" relfile="Data.RestaurantOnline/OrderDao.cs" line="51" column="1" />
+      <Breakpoint file="/Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Data.RestaurantOnline/OrderDao.cs" relfile="Data.RestaurantOnline/OrderDao.cs" line="499" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Web.RestaurantOnline PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

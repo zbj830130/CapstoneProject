@@ -1,0 +1,40 @@
+﻿@model List<Model.RestaurantOnline.ShoppingCartItem>
+@{
+    Layout=null;
+}
+
+@{
+    var totalPrice = decimal.Zero;
+    var itemCount =0;
+    foreach(var item in Model){
+        totalPrice += item.Price * item.Qty;
+        itemCount += item.Qty;
+        <div id="confirmListItem_@item.ItemID" class="confirmShoppingCarItemContainer">
+                <div class="confirmShoppingCarItem width90">
+                    <div class="confirmShoppingCarItemName">
+			            <span class="confirmShoppingCartItemEName">@item.EName</span>
+		                <br>
+			            <span class="confirmShoppingCartItemOName">@item.OName</span>
+                    </div>
+                    <div class="confirmShoppingCarItemOperation">
+						<label id="confirmItemMinu_@item.ItemID" onclick="confirmMinuQty(@item.ItemID)" class="btn">
+			                    <i class="fa fa-minus-square fa-2x" aria-hidden="true"></i>
+			            </label>
+			            <label id="confirmItemQty_@item.ItemID">@item.Qty</label>
+			            <label id="confirmItemAdd_@item.ItemID" onclick="confirmAddQty(@item.ItemID)" class="btn">
+				            <i class="fa fa-plus-square fa-2x" aria-hidden="true"></i>
+			            </label>
+                    </div>
+                    <div class="confirmShoppingCarItemPrice">
+                        <span>$</span>
+			            <span id="confirmItemTotalPrice_@item.ItemID">@(item.Price * item.Qty)</span>
+                    </div>
+		            <input type="hidden" value="@item.Price" id="confirmItemPrice_@item.ItemID" />
+                </div>
+            </div>
+    }
+    <input type="hidden" value="@totalPrice" id="totalPrice" />
+    <input type="hidden" value="@itemCount" id="itemCount" />
+}
+
+

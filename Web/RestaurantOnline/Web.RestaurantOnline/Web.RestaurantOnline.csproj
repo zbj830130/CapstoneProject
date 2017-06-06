@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E4192ED-AF02-488F-A799-2A81D6DDD812}</ProjectGuid>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Web.RestaurantOnline</RootNamespace>
+    <AssemblyName>Web.RestaurantOnline</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="Models\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="Imgs\" />
+    <Folder Include="Views\User\" />
+    <Folder Include="Controllers\WebApi\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\LoginAttribute.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\WebApi\CategoryController.cs" />
+    <Compile Include="Controllers\WebApi\ApiBaseController.cs" />
+    <Compile Include="Controllers\WebApi\BannersController.cs" />
+    <Compile Include="Controllers\WebApi\DishController.cs" />
+    <Compile Include="Controllers\WebApi\TableController.cs" />
+    <Compile Include="Controllers\WebApi\WaiterController.cs" />
+    <Compile Include="Controllers\WebApi\OrderController.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Web.config" />
+    <Content Include="Global.asax" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\navbar_default.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Imgs\delivery-free.png" />
+    <Content Include="Imgs\t-shirts.png" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\carousel.css" />
+    <Content Include="Content\index.css" />
+    <Content Include="Views\Home\DishList.cshtml" />
+    <Content Include="Scripts\Index.js" />
+    <Content Include="Scripts\fly.js" />
+    <Content Include="Scripts\requestAnimationFrame.js" />
+    <Content Include="Views\Home\MiniShoppingCartSingleItem.cshtml" />
+    <Content Include="Views\Home\LoadMiniShoppingCart.cshtml" />
+    <Content Include="Views\Home\ConfirmOrder.cshtml" />
+    <Content Include="Content\confirmOrder.css" />
+    <Content Include="Scripts\confirmOrder.js" />
+    <Content Include="Content\bootstrap-directional-buttons.css" />
+    <Content Include="Scripts\bootstrap-datetimepicker.js" />
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Imgs\receiptBotom.png" />
+    <Content Include="Views\Home\OrderDetails.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Content\main.css" />
+    <Content Include="Imgs\loginIndex.png" />
+    <Content Include="Content\loginAndSignup.css" />
+    <Content Include="Scripts\loginAndSignup.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Views\Home\OrderCompleted.cshtml" />
+    <Content Include="Content\OrderCompleted.css" />
+    <Content Include="Views\Shared\_UserLayout.cshtml" />
+    <Content Include="Views\User\OrderList.cshtml" />
+    <Content Include="Content\orderList.css" />
+    <Content Include="Views\User\GetAllOrders.cshtml" />
+    <Content Include="Scripts\orderList.js" />
+    <Content Include="Views\User\GetReservedOrders.cshtml" />
+    <Content Include="Views\User\GetCanceledOrders.cshtml" />
+    <Content Include="Views\User\GetFinishedOrders.cshtml" />
+    <Content Include="Views\User\GetOrderDetails.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fonts\fontawesome-webfont.woff2" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Imgs\products\1.jpeg" />
+    <None Include="Imgs\products\2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business.RestaurantOnline\Business.RestaurantOnline.csproj">
+      <Project>{055547EE-47C1-4437-BE64-F4A5A8AD33AF}</Project>
+      <Name>Business.RestaurantOnline</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data.RestaurantOnline\Data.RestaurantOnline.csproj">
+      <Project>{CCA67630-FBB0-4602-B6B7-742E34C7E433}</Project>
+      <Name>Data.RestaurantOnline</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.RestaurantOnline\Model.RestaurantOnline.csproj">
+      <Project>{8922920F-C62B-475D-9DB9-1C131129AF29}</Project>
+      <Name>Model.RestaurantOnline</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8081" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>

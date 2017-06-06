@@ -1,0 +1,32 @@
+﻿@model Model.RestaurantOnline.OrderResultModel
+<link href="/Content/bootstrap-directional-buttons.css" rel="stylesheet" type="text/css" />
+<link href="/Content/OrderCompleted.css" rel="stylesheet" type="text/css" />
+<div class="confirmBanner width98">
+    <div>
+        <a class="btn btn-success btn-arrow-right btn-lg width25vw">1st: Choose Dishes(Home)</a>
+        <a class="btn btn-success btn-arrow-right btn-lg width25vw">2nd: Confirm Order</a>
+        <a  class="btn btn-primary btn-arrow-right btn-lg width47vw">3rd: Complete Order</a>
+    </div>
+</div>
+<div class='orderResult div-width-90'>
+	@if(Model.IsSuccess == true){
+	    <div class="alert alert-success rightMessage width98" role="alert">
+	        <span class="resultTitle">Congratulations, Your order has been submitted successfully</span>
+			<br>
+			<span class="resultMessage">Order number is:</span><span class="orderInfo">@Model.OrderCode</span>
+			<span class="resultMessage">and order amount is:</span><span class="orderInfo">$@Model.OrderAmount</span>
+		</div>
+    }
+	else{
+		<div class="alert alert-danger rightMessage width98" role="alert">
+	        <span class="resultTitle">Sorry, Order failed</span>
+	        <br>
+	        <span class="resultMessage">Please, Re Order </span><a href="/Home/ConfirmOrder" class="hrefReorder">Re Order Now &gt;&gt;</a>
+	    </div>
+	}
+<script type="text/javascript">
+    $(function(){
+        $("#leftNavbar").children().removeClass("active");
+    });
+</script>
+</div>

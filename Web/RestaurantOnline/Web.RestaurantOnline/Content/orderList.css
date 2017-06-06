@@ -1,0 +1,145 @@
+﻿.myOrderTitle {
+    border: #F2F2F2 1px solid;
+    background-color: white;
+    padding-left: 1vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    font-size: 1.5vw;
+    margin-bottom: 2vw;
+}
+
+.orderContainer {
+    border-bottom: #F2F2F2 1px solid;
+}
+
+.orderItem {
+    border: #F2F2F2 1px solid;
+    margin-top: 1.5vw;
+    margin-bottom: 1.5vw;
+}
+
+.orderInfo {
+    background-color: #F2F2F2;
+    height: 5vw;
+    border-bottom: #DFDFDF 1px solid;
+}
+
+.orderTitle {
+    padding-top: 0.3vw;
+    height: 2.5vw;
+    padding-left: 1vw;
+}
+
+.orderTitleSpan {
+    color: #9A9AA3;
+    font-size: 1.2vw;
+}
+
+.orderMunber {
+    color: black;
+    font-size: 1.2vw;
+    margin-left: -3vw;
+}
+
+.orderStatus {
+    color: black;
+    font-size: 1.2vw;
+    font-weight: lighter;
+}
+
+.userName {
+    padding-top: 0.3vw;
+    height: 2.5vw;
+    border-top: #DFDFDF 1px solid;
+    padding-left: 1vw;
+}
+
+.orderOpertaion {
+    float: right;
+}
+
+.operation {
+    margin-right: 2vw;
+    cursor:pointer;
+    color:red;
+}
+
+.marginRight2vw {
+    margin-right: 2vw;
+}
+
+.marginRight3vw {
+    margin-right: 3vw;
+}
+
+.dishImgDiv {
+    display: inline-block;
+    width: 10%;
+    text-align: center;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.dishImg {
+    width: 8vw;
+    height: 8vw;
+}
+
+.dishName {
+    display: inline-block;
+    width: 40%;
+}
+
+.englishName, .otherName {
+}
+
+.englishName {
+    color: black;
+    font-size: 1.8vw;
+}
+
+.otherName {
+    color: #9A9AA3;
+    font-size: 1.3vw;
+}
+
+.dishQty {
+    width: 10%;
+    display: inline-block;
+    color: black;
+    font-size: 1.3vw;
+}
+
+.dishUnitPrice {
+    display: inline-block;
+    width: 20%;
+    color: black;
+    font-size: 1.3vw;
+}
+
+.dishTotalPrice {
+    display: inline-block;
+    color: black;
+    font-size: 1.3vw;
+}
+
+.paginationDiv {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.pagination {
+    margin: 0px;
+}
+
+.detailItem {
+    width: 100%;
+}
+
+.detailItemLine {
+    margin-left: auto;
+    margin-right:auto;
+    width: 96%;
+    height: 1px;
+    background-color: #F2F2F2;
+}

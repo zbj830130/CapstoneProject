@@ -1,0 +1,38 @@
+﻿@model Model.RestaurantOnline.DishesModel
+@{
+    Layout=null;
+}
+<div id="listItem_@Model.Id" class="listItem">
+    <div class="itemName">
+		@if(Model.EName.Length > 12)
+		{
+            <span class="eName">@Model.EName.Substring(0,10)...</span>
+		}
+		else
+		{
+		    <span class="eName">@Model.EName</span>
+		}
+		<br>
+		@if(Model.OtherName.Length > 12)
+        {
+            <span class="oName">@Model.OtherName.Substring(0,10)...</span>
+        }
+        else
+        {
+            <span class="oName">@Model.OtherName</span>
+        }
+    </div>
+    <div class="itemOpertaion">
+        <label id="itemMinu_@Model.Id" onclick="miniMinuQty(@Model.Id)" class="btn">
+            <i class="fa fa-minus-square fa-2x" aria-hidden="true"></i>
+        </label>
+        <label id="itemQty_@Model.Id">1</label>
+        <label id="itemAdd_@Model.Id" onclick="miniAddQty(@Model.Id)" class="btn">
+            <i class="fa fa-plus-square fa-2x" aria-hidden="true"></i>
+        </label>
+    </div>
+    <div class="itemPrice">
+        <span>$</span>
+        <span id="itemTotalPrice_@Model.Id" class="itemTotalPrice">@Model.Price</span>
+    </div>
+</div>

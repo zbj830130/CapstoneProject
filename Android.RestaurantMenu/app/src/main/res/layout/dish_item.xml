@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    card_view:cardBackgroundColor="@color/whiteColor"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:padding="2dp">
+
+        <ImageView
+            android:id="@+id/dish_img"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="10dp"
+            android:scaleType="centerCrop"/>
+
+        <TextView
+            android:id="@+id/dish_e_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@id/dish_img"
+            android:textColor="@color/dishListETitleColor"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/dish_o_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dish_e_name"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/dish_img"
+            android:textColor="@color/dishListOTitleColor"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/dish_e_common"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dish_o_name"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/dish_img"
+            android:textColor="@color/dishListETitleColor"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/dish_o_common"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dish_e_common"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/dish_img"
+            android:textColor="@color/dishListOTitleColor"
+            android:textSize="15dp"/>
+
+        <LinearLayout
+            android:id="@+id/qty_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dish_img"
+            android:layout_marginLeft="15dp"
+
+            android:layout_toRightOf="@+id/dish_img"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/qty_sub"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/qty_button_cycle_border"
+                android:text="-"
+                android:textColor="@color/whiteColor"
+                android:textSize="35dp"/>
+
+            <TextView
+                android:id="@+id/qty_num"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="25dp"/>
+
+            <Button
+                android:id="@+id/qty_add"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:background="@drawable/qty_button_cycle_border"
+                android:text="+"
+                android:textColor="@color/whiteColor"
+                android:textSize="35dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/dish_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignBottom="@+id/dish_img"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+
+            android:background="@drawable/dish_item_buy_button"
+            android:text="@string/dishBuyButton"
+            android:textColor="@color/whiteColor"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/dish_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignBottom="@+id/dish_img"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+
+            android:background="@drawable/dish_item_cancle_button"
+            android:text="@string/dishCancelButton"
+            android:textColor="@color/whiteColor"
+            android:textSize="20dp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/dish_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="200dp"
+            android:layout_toRightOf="@+id/dish_img"
+            android:textColor="@color/dishPriceColor"
+            android:textSize="30dp"/>
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

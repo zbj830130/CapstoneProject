@@ -1,0 +1,189 @@
+﻿.width90 {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calendarIcon {
+    margin-left: -23px;
+}
+
+.title {
+    width: 100%;
+    font-size: 3vw;
+    text-align: center;
+    display: inline-block;
+}
+
+.title1 {
+    width: 50%;
+    font-size: 2.73vw;
+    display: inline-block;
+}
+
+.goBack {
+    display: inline-block;
+    text-align: center;
+    min-height: 100%;
+    width: 40%;
+    color: gray;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #f4a40e;
+    border-color: #f4a40e;
+}
+
+.userName {
+    width: 100%;
+    height: 30px;
+    background-color: #f4a40e;
+    border-bottom: #d18903 1px solid;
+    color: white;
+}
+
+.confirmOrderContainer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.userInfo {
+    border: #c5c5c5 1px solid;
+    box-shadow: 0 0 1px #c6c6c6;
+    width: 50%;
+    display: inline-block;
+    background-color: white;
+}
+
+.userInfoFied {
+    left: auto;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 50%;
+}
+
+.confirmShoppingCart {
+    border: #c5c5c5 1px solid;
+    border-bottom: none;
+    width: 45%;
+    float: right;
+    background-color: white;
+}
+
+.confirmShoppingCartTitle {
+    width: 100%;
+    border-bottom: #c5c5c5 1px solid;
+}
+
+.confirmShoppingCarItemList {
+    width: 100%;
+}
+
+.confirmShoppingCarItemContainer {
+    width: 100%;
+}
+
+.confirmShoppingCarItem {
+    min-height: 60px;
+    padding-top: 5px;
+    border-bottom: #f4a40e 1px solid;
+}
+
+.confirmShoppingCarItemName, .confirmShoppingCarItemOperation, .confirmShoppingCarItemPrice {
+    display: inline-block;
+}
+
+.confirmShoppingCarItemName {
+    width: 35%;
+    padding-left: 10px;
+    vertical-align: middle;
+}
+
+.confirmShoppingCarItemOperation {
+    width: 40%;
+}
+
+.confirmShoppingCarItemPrice {
+    width: 22%;
+    text-align: center;
+    color: red;
+}
+
+.confirmShoppingCartItemEName {
+    font-weight: bold;
+    color: black;
+}
+
+.confirmShoppingCartItemOName {
+    color: gray;
+}
+
+.confirmShoppingCartSummary {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.confirmShoppingCartTotalPrice {
+    text-align: right;
+    color: red;
+    font-size: 2.5vw;
+}
+
+.confirmShoppingCartTotalCount {
+    text-align: right;
+    color: gray;
+    font-size: 1.3vw;
+}
+
+.receiptBottom {
+    margin-top: 5px;
+    background-image: url("/Imgs/receiptBotom.png");
+    min-height: 8px;
+    width: 100%;
+}
+
+.submitOrder {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    border-top: #f4a40e 1px solid;
+    text-align: right;
+}
+
+    .submitOrder button {
+        margin-left: 10px;
+    }
+
+    .submitOrder span:first-child {
+        font-size: 1.2vw;
+        color: red;
+    }
+
+    .submitOrder span:nth-child(2) {
+        font-size: 2.2vw;
+        color: red;
+    }
+
+.submitOrderPrice {
+}
+
+.errorDiv {
+    margin-top: 0.5vw;
+    padding: 5px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.mustChoose {
+    color: red;
+}
+
+.control-label:before {
+    content: '*';
+    color: red;
+    font-size: 90%;
+}

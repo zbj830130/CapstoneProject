@@ -1,0 +1,40 @@
+﻿@model List<Model.RestaurantOnline.OrderDetail>
+@{
+    Layout=null;
+}
+@{
+    var index = 0;
+}
+@foreach(var item in Model)
+{
+    var imgName = item.DishId + ".jpeg";
+    <div class="detailItem">
+	    <div class="dishImgDiv">
+	        <img class="dishImg" src="/Imgs/products/@imgName"/>
+	    </div>
+	    <div class="dishName">
+	        <span class="englishName">@item.DishEName</span>
+	        <br>
+	        <span class="otherName">@item.DishOName</span>
+	    </div>
+	    <div class="dishQty">
+	        * @item.Count
+	    </div>
+	    <div class="dishUnitPrice">
+	        <span>$</span>
+	        <span>@item.UnitPrice</span>
+	    </div>
+	    <div class="dishTotalPrice">
+	        <span>$</span>
+	        <span>@(item.UnitPrice*item.Count)</span>
+	    </div>
+	</div>
+    {
+        index = index + 1;
+        if(index != Model.Count)
+        {
+            <div class="detailItemLine"></div>
+        }
+    }
+   
+}

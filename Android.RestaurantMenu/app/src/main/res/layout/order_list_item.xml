@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="1000dp"
+                android:layout_height="60dp">
+
+    <TextView
+        android:id="@+id/order_item_orderId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:textColor="@color/dishListETitleColor"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/order_item_gender_lastName"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/order_item_orderId"
+        android:textColor="@color/dishListETitleColor"
+        android:textSize="25dp"/>
+
+
+    <TextView
+        android:id="@+id/order_item_tableNum"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/order_item_gender_lastName"
+        android:textColor="@color/dishListETitleColor"
+        android:gravity="center"
+        android:textSize="25dp"/>
+
+    <Button
+        android:id="@+id/order_item_checkIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@+id/order_item_detail"
+        android:background="@drawable/ol_check_in_button"
+        android:text="check in"
+        android:textColor="@color/blueColor"
+        android:textSize="25dp"
+        />
+
+    <Button
+        android:id="@+id/order_item_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/ol_check_in_button"
+        android:text="detail"
+        android:textColor="@color/blueColor"
+        android:textSize="25dp"
+        />
+
+</RelativeLayout>

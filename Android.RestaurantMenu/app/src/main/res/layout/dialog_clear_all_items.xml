@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/whiteColor"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_clear_all_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:padding="8dp"
+        android:textColor="@color/whiteColor"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/dialog_clear_all_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textColor="@color/blackColor"
+            android:textSize="20dp"
+            android:padding="3dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="15dp">
+
+        <Button
+            android:id="@+id/dialog_clear_all_cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dialog_button"
+            android:text="×"
+            android:textSize="40dp"
+            android:textColor="@color/redColor"
+            android:layout_marginRight="20dp">
+        </Button>
+        <Button
+            android:id="@+id/dialog_clear_all_confirm_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="√"
+            android:textSize="40dp"
+            android:textColor="@color/greenColor"
+            android:background="@drawable/dialog_button">
+        </Button>
+    </LinearLayout>
+
+</LinearLayout>

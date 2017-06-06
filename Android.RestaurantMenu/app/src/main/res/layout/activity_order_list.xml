@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="1026dp"
+             android:layout_height="626dp"
+             android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="1000dp"
+        android:layout_height="600dp"
+        android:layout_gravity="center"
+        android:background="@drawable/dialog_theme"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:text="All Orders"
+                android:textColor="@color/dishListETitleColor"
+                android:textSize="40dp"/>
+
+            <Button
+                android:id="@+id/order_list_shoppingCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/sc_all_orders_button"
+                android:text="Shopping Cart"
+                android:textColor="@color/whiteColor"
+                android:textSize="30dp"
+                />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2.0px"
+            android:background="#ffd1d1d1"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0.0dip"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                            android:layout_width="1000dp"
+                            android:layout_height="60dp">
+
+                <TextView
+                    android:id="@+id/order_list_title_orderId"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/textview_border"
+                    android:gravity="center"
+                    android:text="Order Number"
+                    android:textColor="@color/WaiterConfirmTitleBorderColor"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:id="@+id/order_list_title_gender_lastName"
+                    android:layout_width="310dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/order_list_title_orderId"
+                    android:background="@drawable/textview_border_no_left_no_radius"
+                    android:gravity="center"
+                    android:text="Order Person"
+                    android:textColor="@color/WaiterConfirmTitleBorderColor"
+                    android:textSize="20dp"/>
+
+
+                <TextView
+                    android:id="@+id/order_list_title_tableNum"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/order_list_title_gender_lastName"
+                    android:background="@drawable/textview_border_no_left_no_radius"
+                    android:gravity="center"
+                    android:text="Table No."
+                    android:textColor="@color/WaiterConfirmTitleBorderColor"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:id="@+id/order_list_title_Operation"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30dp"
+                    android:layout_toRightOf="@+id/order_list_title_tableNum"
+                    android:background="@drawable/textview_no_left_border"
+                    android:gravity="center"
+                    android:text="Order Operation"
+                    android:textColor="@color/WaiterConfirmTitleBorderColor"
+                    android:textSize="20dp"/>
+
+            </RelativeLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/order_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2.0px"
+            android:layout_marginBottom="20dp"
+            android:background="#ffd1d1d1"/>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/order_list_close_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/close_button"
+                android:text="Close"
+                android:textColor="@color/whiteColor"
+                android:textSize="30dp"
+                />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/order_list_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:src="@drawable/close"/>
+
+</FrameLayout>

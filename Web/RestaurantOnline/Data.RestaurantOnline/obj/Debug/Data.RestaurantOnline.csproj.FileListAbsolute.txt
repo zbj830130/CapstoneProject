@@ -1,0 +1,9 @@
+/Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Data.RestaurantOnline/bin/Debug/Data.RestaurantOnline.dll
+/Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Data.RestaurantOnline/bin/Debug/Data.RestaurantOnline.pdb
+/Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Data.RestaurantOnline/bin/Debug/Model.RestaurantOnline.dll
+/Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Data.RestaurantOnline/bin/Debug/MySql.Data.dll
+/Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Data.RestaurantOnline/bin/Debug/Model.RestaurantOnline.pdb
+/Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Data.RestaurantOnline/obj/Debug/Data.RestaurantOnline.csprojResolveAssemblyReference.cache
+/Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Data.RestaurantOnline/obj/Debug/Data.RestaurantOnline.csproj.CoreCompileInputs.cache
+/Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Data.RestaurantOnline/obj/Debug/Data.RestaurantOnline.dll
+/Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Data.RestaurantOnline/obj/Debug/Data.RestaurantOnline.pdb

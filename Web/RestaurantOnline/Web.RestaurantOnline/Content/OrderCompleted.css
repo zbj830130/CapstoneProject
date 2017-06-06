@@ -1,0 +1,35 @@
+﻿.btn-primary {
+    background-color: #f4a40e;
+    border-color: #f4a40e;
+}
+
+
+.orderResult {
+    padding-top: 1vw;
+    color: #f4a40e;
+}
+
+.rightMessage {
+    text-align: center;
+}
+
+.resultTitle {
+    font-size: 2.5vw;
+}
+
+.resultMessage, .orderInfo {
+    display: inline-block;
+    margin-top: 2vw;
+    font-size: 1.5vw;
+}
+
+.orderInfo {
+    color: red;
+}
+
+.hrefReorder {
+    display: inherit;
+    margin-top: 1vw;
+    color: #3c763d;
+    font-size:2vw;
+}

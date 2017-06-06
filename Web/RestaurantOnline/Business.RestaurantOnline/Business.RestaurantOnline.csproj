@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{055547EE-47C1-4437-BE64-F4A5A8AD33AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Business.RestaurantOnline</RootNamespace>
+    <AssemblyName>Business.RestaurantOnline</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CategoriesBuss.cs" />
+    <Compile Include="DishesBuss.cs" />
+    <Compile Include="OrderBuss.cs" />
+    <Compile Include="OrderIdHelper.cs" />
+    <Compile Include="UserBuss.cs" />
+    <Compile Include="DataChangingLogBuss.cs" />
+    <Compile Include="TableBuss.cs" />
+    <Compile Include="WaiterBuss.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data.RestaurantOnline\Data.RestaurantOnline.csproj">
+      <Project>{CCA67630-FBB0-4602-B6B7-742E34C7E433}</Project>
+      <Name>Data.RestaurantOnline</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model.RestaurantOnline\Model.RestaurantOnline.csproj">
+      <Project>{8922920F-C62B-475D-9DB9-1C131129AF29}</Project>
+      <Name>Model.RestaurantOnline</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

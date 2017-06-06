@@ -1,0 +1,51 @@
+﻿@model List<Model.RestaurantOnline.ShoppingCartItem>
+@{
+    Layout=null;
+}
+@{
+    var totalPrice = decimal.Zero;
+    var itemCount =0;
+	foreach(var item in Model){
+        totalPrice += item.Price * item.Qty;
+        itemCount += item.Qty;
+
+        <div id="listItem_@item.ItemID" class="listItem">
+            <div class="itemName">
+                @if(item.EName.Length > 12)
+                {
+                    <span class="eName">@item.EName.Substring(0,10)...</span>
+                }
+                else
+                {
+                    <span class="eName">@item.EName</span>
+                }
+                <br>
+                @if(item.OName.Length > 12)
+                {
+                    <span class="oName">@item.OName.Substring(0,10)...</span>
+                }
+                else
+                {
+                    <span class="oName">@item.OName</span>
+                }
+            </div>
+            <div class="itemOpertaion">
+                <label id="itemMinu_@item.ItemID" onclick="miniMinuQty(@item.ItemID)" class="btn">
+                    <i class="fa fa-minus-square fa-2x" aria-hidden="true"></i>
+                </label>
+                <label id="itemQty_@item.ItemID">@item.Qty</label>
+                <label id="itemAdd_@item.ItemID" onclick="miniAddQty(@item.ItemID)" class="btn">
+                    <i class="fa fa-plus-square fa-2x" aria-hidden="true"></i>
+                </label>
+            </div>
+            <div class="itemPrice">
+                <span>$</span>
+                <span id="itemTotalPrice_@item.ItemID" class="itemTotalPrice">@(item.Price * item.Qty)</span>
+            </div>
+        </div>
+    }
+    <input type="hidden" value="@totalPrice" id="totalPrice" />
+    <input type="hidden" value="@itemCount" id="itemCount" />
+}
+
+

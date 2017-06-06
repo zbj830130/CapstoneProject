@@ -1,0 +1,106 @@
+﻿<link href="/Content/confirmOrder.css" rel="stylesheet" type="text/css" />
+<link href="/Content/bootstrap-directional-buttons.css" rel="stylesheet" type="text/css" />
+<link href="/Content/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+<div class="confirmBanner width98">
+	<div>
+		<a class="btn btn-success btn-arrow-right btn-lg width25vw">1st: Choose Dishes(Home)</a>
+		<a class="btn btn-primary btn-arrow-right btn-lg width47vw">2nd: Confirm Order</a>
+		<a  class="btn btn-danger btn-arrow-right btn-lg width25vw">3rd: Complete Order</a>
+    </div>
+</div>
+
+
+<div class="confirmOrderContainer">
+    <div class="userInfo">
+		<div class="title">
+		    Booking Information
+		</div>
+        <form class="form-horizontal" role="form" id="userInfo" action="/Home/OrderCompleted" method="post">
+			<div class="form-group">
+                <label class="col-sm-3 control-label">Gender</label>
+                <div class="col-sm-8">
+                    <label class="radio-inline"><input type="radio" id="gender1" name="gender" value="Mr" checked>Mr.</label>
+					<label class="radio-inline"><input type="radio" id ="gender2" name="gender" value="Ms">Ms.</label> 
+                    <div class="alert alert-danger errorDiv">
+                        <span id="genderError"></span>
+					</div>
+                </div>
+				<div class="col-sm-1"></div>
+            </div>
+			<div class="form-group">
+			    <label for="lastName" class="col-sm-3 control-label">Last Name</label>
+			    <div class="col-sm-8">
+			        <input type="text" name="lastName" class="form-control" id="lastName" placeholder= "Please input last name">
+					<div class="alert alert-danger errorDiv">
+                        <span id="lastNameError"></span>
+                    </div>
+			    </div>
+				<div class="col-sm-1"></div>
+			</div>
+			<div class="form-group">
+                <label class="col-sm-3 control-label">Meal Date</label>
+                    <div class="col-sm-8">
+                       <div class="input-append date" id="dp3" data-date='@DateTime.Now.ToString("yyyy-MM-dd")' data-date-format="yyy-mm-dd">
+	                        <input name="mealTime" id="mealTime" class="span2" size="16" value='@DateTime.Now.ToString("yyyy-MM-dd")' type="text">
+						<i class="glyphicon glyphicon-calendar calendarIcon"></i>
+						<div class="alert alert-danger errorDiv">
+                            <span id="mealTimeError"></span>
+                        </div>
+                        </div>
+                    </div>
+                <div class="col-sm-1"></div>
+            </div>
+			<div class="form-group">
+                <label class="col-sm-3 control-label">Meal Number</label>
+                    <div class="col-sm-8">
+                        <label class="radio-inline"><input type="radio" name="mealNumber" value="2-4" checked>2-4</label>
+                        <label class="radio-inline"><input type="radio" name="mealNumber" value="5-8">5-8</label>
+                        <label class="radio-inline"><input type="radio" name="mealNumber" value="9-12">9-12</label>
+                        <div class="alert alert-danger errorDiv">
+                            <span id="mealNumError"></span>
+                        </div>
+				    </div>
+                <div class="col-sm-1"></div>
+            </div>
+			<div class="form-group">
+				<div class="submitOrder">
+					<span >Amount: $</span><span id="submitPrice">0</span>
+					<button type="submit" id="submitOrder" class="btn btn-success">Submit Order</button>
+					<div class="alert alert-danger errorDiv">
+                        <span id="shoppingCartError"></span>
+                    </div>
+				</div>            
+            </div>
+		</form>
+	</div>
+	<div class="confirmShoppingCart">
+		<div class="confirmShoppingCartTitle">
+	        <div class="width90">
+				<div class="title1">
+					<span>Order Details</span>
+				</div>
+	            <div class="goBack">
+	                <span> &lt;&lt;Go Back</span>
+	            </div>
+			</div>
+		</div>
+        <div class="confirmShoppingCarItemList">
+		
+		</div>
+		<div class="confirmShoppingCartSummary">
+            <div class="width90 confirmShoppingCartTotalPrice">
+                <span>$</span><span id="confirmShoppingCartTotalPrice">0</span>
+			</div>
+			<div class="width90 confirmShoppingCartTotalCount">
+                <span id="confirmShoppingCartTotalCount">0</span>
+				<span>Items</span>
+			</div>
+			<div class="receiptBottom">
+			</div>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+</div>
+<div id="push"></div>
+<script src="../../../Scripts/bootstrap-datetimepicker.js" type="text/javascript"></script>
+<script src="../../../Scripts/confirmOrder.js" type="text/javascript"></script>

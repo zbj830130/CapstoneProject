@@ -1,0 +1,208 @@
+﻿html,
+body {
+    height: 100%;
+    font-family: "maison_neuebold", Verdana, Arial, sans-serif;
+    font-size: 1vw;
+    /* The html and body elements cannot have any padding or margin. */
+}
+
+#userLogout {
+    
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    line-height: 0;
+    clear: both;
+}
+
+.red-border-bottom {
+    border-bottom: 1px solid #e60000;
+}
+
+.red-border-top {
+    border-top: 1px solid #e60000;
+}
+
+.gray-border-right {
+    border-right: 1px solid #b3b3b3;
+}
+
+
+/* Wrapper for page content to push down footer */
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -60px;
+}
+
+
+/* Set the fixed height of the footer here */
+
+#push {
+    height: 15vw;
+}
+
+#footer {
+    height: auto;
+}
+
+
+/* Lastly, apply responsive CSS fixes as necessary */
+
+@media (max-width: 767px) {
+    #footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.div-width-80 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-width-95 {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-width-90 {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-width-98 {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.width98 {
+    width: 98%;
+}
+
+.width25vw {
+    width: 25vw;
+}
+
+.width47vw {
+    width: 47vw;
+}
+
+.confirmBanner {
+    height: 6vw;
+    margin-top: -20px;
+    font-size:0.5vw;
+}
+
+    .confirmBanner div {
+        float: right;
+    }
+
+.textaligncenter {
+    text-align: center;
+}
+
+.control label {
+    vertical-align: middle;
+    font-size: 1.2vw;
+    margin-left: 0.4vw;
+    color: orangered;
+    margin-top: 0.5vw;
+}
+
+.control input[type=checkbox] {
+    -ms-transform: scale(1.3);
+    /* IE */
+    -moz-transform: scale(1.3);
+    /* FireFox */
+    -webkit-transform: scale(1.3);
+    /* Safari and Chrome */
+    -o-transform: scale(1.3);
+    /* Opera */
+}
+
+.divide-line {
+    width: 95%;
+    height: 1px;
+    background-color: #b3b3b3;
+    margin-top: 2vw;
+    margin-bottom: 4vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#footer ul {
+    display: inline-block;
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+#footer i {
+    margin: 0.4vw;
+}
+
+#footer .col-md-3,
+#footer .col-md-4 {
+    border: 1px solid #b3b3b3;
+    border-radius: 15px;
+}
+
+.social-footer {
+    display: inline-block;
+}
+
+    .social-footer li {
+        float: left;
+    }
+
+.copyright {
+    width: 30vw;
+    float: right;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+    .copyright address {
+        display: inline-block;
+    }
+
+    .copyright img {
+        width: 3vw;
+        height: auto;
+        display: inline-block;
+        margin-bottom: 2vw;
+    }
+
+.gradient {
+    background: #000000;
+    background: -moz-linear-gradient(top, white 0%, grey 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, grey));
+    background: -webkit-linear-gradient(top, white 0%, grey 100%);
+    background: -o-linear-gradient(top, white 0%, grey 100%);
+    background: -ms-linear-gradient(top, white 0%, grey 100%);
+    background: linear-gradient(to bottom, white 0%, grey 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='white', endColorstr='grey', GradientType=0);
+}
+
+:root .gradient {
+    filter: none;
+}
+
+.noData {
+    text-align: center;
+    font-size: 2vw;
+}
