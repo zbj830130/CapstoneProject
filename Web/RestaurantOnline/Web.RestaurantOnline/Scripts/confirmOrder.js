@@ -1,4 +1,4 @@
-﻿$(function(){
+﻿﻿$(function(){
     formElementsBindEvent();
 
 	loadShoppingCartInfo();
@@ -50,12 +50,13 @@
 		    return false;
 		 }
 
-		 var val=$('input:radio[name="mealNumber"]:checked').val();
-		 if(val==null){
-		    $("#mealNumError").parent().show();
-		    $("#mealNumError").text("").text("Please Choose Meal Number");
-		    return false;
-		 }
+         var mealNum = $("#mealNumDw").val();
+
+         if(mealNum==0){
+            $("#mealNumError").parent().show();
+            $("#mealNumError").text("").text("Please Choose Meal Number");
+            return false;
+         }
 
          var itemCount = 0;
 
@@ -104,10 +105,18 @@ function formElementsBindEvent(){
         $("#shoppingCartError").parent().hide();
     });
 
-    $('input:radio[name="mealNumber"]').click(function(){
+    for(var i=2;i<=20;i++){
+        if(i%2==0){
+        $("#mealNumDw").append("<option value='"+i+"'>" + i + " Person</option>");
+        }
+    }
+
+    $("#mealNumDw").click(function(){
         $("#mealNumError").parent().hide();
         $("#shoppingCartError").parent().hide();
     });
+
+
 }
 
 function submitOrder() {

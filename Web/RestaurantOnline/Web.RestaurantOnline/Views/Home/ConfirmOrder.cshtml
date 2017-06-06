@@ -1,4 +1,4 @@
-﻿<link href="/Content/confirmOrder.css" rel="stylesheet" type="text/css" />
+﻿﻿<link href="/Content/confirmOrder.css" rel="stylesheet" type="text/css" />
 <link href="/Content/bootstrap-directional-buttons.css" rel="stylesheet" type="text/css" />
 <link href="/Content/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
 <div class="confirmBanner width98">
@@ -53,9 +53,10 @@
 			<div class="form-group">
                 <label class="col-sm-3 control-label">Meal Number</label>
                     <div class="col-sm-8">
-                        <label class="radio-inline"><input type="radio" name="mealNumber" value="2-4" checked>2-4</label>
-                        <label class="radio-inline"><input type="radio" name="mealNumber" value="5-8">5-8</label>
-                        <label class="radio-inline"><input type="radio" name="mealNumber" value="9-12">9-12</label>
+                        
+					<select id="mealNumDw" name="mealNumber">
+                        <option value=0 selected="selected" class="selectpicker">Please Choose</option>
+					</select>
                         <div class="alert alert-danger errorDiv">
                             <span id="mealNumError"></span>
                         </div>

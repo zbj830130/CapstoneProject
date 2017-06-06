@@ -57,7 +57,7 @@ public class BannerActivity extends AppCompatActivity {
 
     protected void onRestart() {
         super.onRestart();
-        onloadBanners();  
+        onloadBanners();
     }
 
 
