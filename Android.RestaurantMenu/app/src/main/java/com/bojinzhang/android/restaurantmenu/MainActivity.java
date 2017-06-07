@@ -59,8 +59,8 @@ public class MainActivity extends FragmentActivity {
         viewPager = (ViewPager) findViewById(R.id.dishes_viewPager);
         scrollIndicatorView = (ScrollIndicatorView) findViewById(R.id.categories_indicator);
 
-        float unSelectSize = 12;
-        float selectSize = unSelectSize * 1.3f;
+        float unSelectSize = 18;
+        float selectSize = 22;
         scrollIndicatorView.setOnTransitionListener(new OnTransitionTextListener().setColor(0xFF2196F3, Color.GRAY).setSize(selectSize, unSelectSize));
         scrollIndicatorView.setScrollBar(new ColorBar(this, 0xFF2196F3, 4));
 

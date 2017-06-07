@@ -125,6 +125,15 @@ namespace Web.RestaurantOnline.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult GetAvailableTableNum(int mealNum, DateTime mealDate)
+        {
+            TableBuss buss = new TableBuss();
+            var availableTableNums = buss.GetTableNumListByTableHeadcount(mealNum, mealDate);
+
+            var result = new { tableNums = availableTableNums };
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
         [LoginAttribute("/Home/ConfirmOrder")]
         public ActionResult ConfirmOrder()
         {
@@ -140,7 +149,8 @@ namespace Web.RestaurantOnline.Controllers
 
         [LoginAttribute("/Home/ConfirmOrder")]
         [HttpPost]
-        public ActionResult OrderCompleted(string gender, string lastName, string mealTime, string mealNumber)
+        public ActionResult OrderCompleted(string gender, string lastName, string mealTime,
+                                           string mealNumber, string tableNum)
         {
             var orderInfo = new OrderInfo();
             orderInfo.Gender = gender;
@@ -151,6 +161,7 @@ namespace Web.RestaurantOnline.Controllers
             orderInfo.CreateTime = DateTime.Now;
             orderInfo.Status = OrderStatusEnum.Order;
             orderInfo.CustomerId = Int32.Parse(Session["userId"].ToString());
+            orderInfo.TableNum = Convert.ToInt32(tableNum);
 
             var result = new OrderResultModel();
             var items = GetShoppingCartInfoFromCookie();

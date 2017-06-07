@@ -9,7 +9,9 @@ namespace Data.RestaurantOnline
 {
     public class OrderDao
     {
-        public void CreateOrder(OrderInfo orderInfo, List<OrderDetail> orderDetail)
+        private String[] monthColumeNames = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sep", "Oct", "Nov", "Dece" };
+
+        public void CreateOrder(OrderInfo orderInfo, List<OrderDetail> orderDetail, string tableMonthStatus)
         {
 
             using (MySqlConnection con = new MySqlConnection(MySqlHelper.Conn))
@@ -19,8 +21,8 @@ namespace Data.RestaurantOnline
                 {
                     try
                     {
-                        var sql = @"INSERT INTO OrderInfo(orderId,customerId,gender,lastName,mealTime,mealNumber,totalPrice,dishesCount,createTime,status)
-		                      VALUES(@orderId,@customerId,@gender,@lastName,@mealTime,@mealNumber,@totalPrice,@dishesCount,@createTime,@status)";
+                        var sql = @"INSERT INTO OrderInfo(orderId,customerId,gender,lastName,mealTime,mealNumber,totalPrice,dishesCount,createTime,status,tableNumber)
+		                      VALUES(@orderId,@customerId,@gender,@lastName,@mealTime,@mealNumber,@totalPrice,@dishesCount,@createTime,@status,@tableNumber)";
 
                         MySqlParameter[] paras = {
                             new MySqlParameter("@orderId",MySqlDbType.String),
@@ -36,6 +38,7 @@ namespace Data.RestaurantOnline
                             new MySqlParameter("@dishesCount",MySqlDbType.Int32),
                             new MySqlParameter("@createTime",MySqlDbType.DateTime),
                             new MySqlParameter("@status",MySqlDbType.Int32),
+                            new MySqlParameter("@tableNumber",MySqlDbType.Int32)
                         };
                         paras[0].Value = orderInfo.OrderId;
                         paras[1].Value = orderInfo.CustomerId;
@@ -47,6 +50,7 @@ namespace Data.RestaurantOnline
                         paras[7].Value = orderInfo.ItemsCount;
                         paras[8].Value = orderInfo.CreateTime;
                         paras[9].Value = orderInfo.Status;
+                        paras[10].Value = orderInfo.TableNum;
 
                         MySqlHelper.ExecuteNonQuery(tran, CommandType.Text, sql, paras);
 
@@ -96,6 +100,16 @@ namespace Data.RestaurantOnline
                         }
 
                         MySqlHelper.ExecuteNonQuery(tran, CommandType.Text, detailSql.Remove(detailSql.Length - 1, 1).ToString(), detailParas.ToArray());
+
+                        var selectMonthName = monthColumeNames[orderInfo.MealTime.Month - 1];
+                        sql = "UPDATE TableInfo SET " + selectMonthName + " = @monthStatus WHERE tableNum=@tableNum";
+
+                        MySqlParameter[] parasTable = { new MySqlParameter("@monthStatus", MySqlDbType.String)
+                                        ,new MySqlParameter("@tableNum", MySqlDbType.Int32) };
+                        parasTable[0].Value = tableMonthStatus;
+                        parasTable[1].Value = orderInfo.TableNum;
+
+                        MySqlHelper.ExecuteNonQuery(MySqlHelper.Conn, CommandType.Text, sql, parasTable);
 
                         tran.Commit();
                         con.Close();
@@ -266,17 +280,46 @@ namespace Data.RestaurantOnline
             return ds;
         }
 
-        public void CancelOrder(int userId, int orderInfoId)
+        public void CancelOrder(int userId, int orderInfoId, int tableNum, int monthNum, string monthStatus)
         {
-            var sql = @"UPDATE orderinfo set status= 4 
+            using (MySqlConnection con = new MySqlConnection(MySqlHelper.Conn))
+            {
+                con.Open();
+                using (MySqlTransaction tran = con.BeginTransaction())
+                {
+                    try
+                    {
+                        var sql = @"UPDATE orderinfo set status= 4 
                         WHERE customerId = @userId AND id = @orderInfoId";
 
-            MySqlParameter[] paras = { new MySqlParameter("@userId", MySqlDbType.Int32)
+                        MySqlParameter[] paras = { new MySqlParameter("@userId", MySqlDbType.Int32)
                                         ,new MySqlParameter("@orderInfoId", MySqlDbType.Int32) };
-            paras[0].Value = userId;
-            paras[1].Value = orderInfoId;
+                        paras[0].Value = userId;
+                        paras[1].Value = orderInfoId;
 
-            MySqlHelper.ExecuteNonQuery(MySqlHelper.Conn, CommandType.Text, sql, paras);
+                        MySqlHelper.ExecuteNonQuery(MySqlHelper.Conn, CommandType.Text, sql, paras);
+
+                        var selectMonthName = monthColumeNames[monthNum - 1];
+
+                        sql = "UPDATE TableInfo SET " + selectMonthName + " = @monthStatus WHERE tableNum=@tableNum";
+
+                        MySqlParameter[] parasTable = { new MySqlParameter("@monthStatus", MySqlDbType.String)
+                                        ,new MySqlParameter("@tableNum", MySqlDbType.Int32) };
+                        parasTable[0].Value = monthStatus;
+                        parasTable[1].Value = tableNum;
+
+                        MySqlHelper.ExecuteNonQuery(MySqlHelper.Conn, CommandType.Text, sql, parasTable);
+
+                        tran.Commit();
+                        con.Close();
+                    }
+                    catch
+                    {
+                        tran.Rollback();
+                        con.Close();
+                    }
+                }
+            }
         }
 
         public void CreateOrderFromTablet(OrderInfo orderInfo, List<OrderDetail> orderDetail)
@@ -385,6 +428,16 @@ namespace Data.RestaurantOnline
             ds = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, sql, null);
 
             return ds;
+        }
+
+        public DataSet GetOrderInfoByOrderInfoId(int orderInfoId)
+        {
+            var sql = "SELECT * FROM OrderInfo WHERE Id=@id";
+            MySqlParameter[] paras = { new MySqlParameter("@id", MySqlDbType.Int32) };
+
+            paras[0].Value = orderInfoId;
+
+            return MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, sql, paras);
         }
 
         public void UpdateOrderStatus(string orderId, OrderStatusEnum status)

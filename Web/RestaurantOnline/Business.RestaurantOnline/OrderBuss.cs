@@ -41,7 +41,19 @@ namespace Business.RestaurantOnline
                 orderDetails.Add(detail);
             }
 
-            dao.CreateOrder(orderInfo, orderDetails);
+
+            var monthStatus = String.Empty;
+            char[] charsList = null;
+
+            var tableDs = new TableDao().GetTableMonthStatusByTableNum(orderInfo.TableNum, orderInfo.MealTime.Month);
+            if (tableDs != null && tableDs.Tables != null && tableDs.Tables.Count > 0)
+            {
+                monthStatus = tableDs.Tables[0].Rows[0]["smn"].ToString();
+                charsList = monthStatus.ToCharArray();
+                charsList[orderInfo.MealTime.Day - 1] = '0';
+            }
+
+            dao.CreateOrder(orderInfo, orderDetails, new string(charsList));
 
             return true;
         }
@@ -151,7 +163,30 @@ namespace Business.RestaurantOnline
 
             try
             {
-                dao.CancelOrder(userId, orderInfoId);
+                var ds = dao.GetOrderInfoByOrderInfoId(orderInfoId);
+                var tableNum = 0;
+                var monthNum = 0;
+                var dayInMonth = 0;
+                char[] charsList = null;
+                var monthStatus = String.Empty;
+
+                if (ds != null && ds.Tables != null && ds.Tables.Count > 0)
+                {
+                    tableNum = Convert.ToInt32(ds.Tables[0].Rows[0]["tableNumber"].ToString());
+                    var mealTime = Convert.ToDateTime(ds.Tables[0].Rows[0]["mealTime"].ToString());
+                    monthNum = mealTime.Month;
+                    dayInMonth = mealTime.Day;
+                }
+
+                var tableDs = new TableDao().GetTableMonthStatusByTableNum(tableNum, monthNum);
+                if (tableDs != null && tableDs.Tables != null && tableDs.Tables.Count > 0)
+                {
+                    monthStatus = tableDs.Tables[0].Rows[0]["smn"].ToString();
+                    charsList = monthStatus.ToCharArray();
+                    charsList[dayInMonth - 1] = '1';
+                }
+
+                dao.CancelOrder(userId, orderInfoId, tableNum, monthNum, new string(charsList));
             }
             catch
             {

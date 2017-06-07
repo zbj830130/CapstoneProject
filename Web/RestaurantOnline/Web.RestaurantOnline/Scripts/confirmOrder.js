@@ -58,6 +58,13 @@
             return false;
          }
 
+         var tableNum = $("#tableNum").val();
+         if(tableNum == 0){
+            $("#tableNumError").parent().show();
+            $("#tableNumError").text("").text("Please Choose Table");
+            return false;
+         }
+
          var itemCount = 0;
 
 		$.ajax({ 
@@ -100,21 +107,41 @@ function formElementsBindEvent(){
         $("#shoppingCartError").parent().hide();
     });
 
-    $("#mealTime").focus(function(){
+    $("#mealTime").change(function(){
+        var mealNum = $("#mealNumDw").val();
+        var mealTime = $("#mealTime").val();
+
+        if(mealNum >0 && $.trim(mealTime).length > 0){
+            getAvailableTableNums(mealNum,mealTime);
+        }
+
+    }).focus(function(){
         $("#mealTimeError").parent().hide();
         $("#shoppingCartError").parent().hide();
     });
-
     for(var i=2;i<=20;i++){
         if(i%2==0){
-        $("#mealNumDw").append("<option value='"+i+"'>" + i + " Person</option>");
+            $("#mealNumDw").append("<option value='"+i+"'>" + i + " Person</option>");
         }
     }
 
     $("#mealNumDw").click(function(){
         $("#mealNumError").parent().hide();
         $("#shoppingCartError").parent().hide();
+    }).change(function(){
+        var mealNum = $("#mealNumDw").val();
+        var mealTime = $("#mealTime").val();
+
+        if(mealNum >0 && $.trim(mealTime).length > 0){
+            getAvailableTableNums(mealNum,mealTime);
+        }
+
     });
+
+    $("#tableNum").click(function(){
+        $("#tableNumError").parent().hide();
+        $("#shoppingCartError").parent().hide();
+    })
 
 
 }
@@ -195,6 +222,31 @@ function singleItemTotalPrice(id,qty){
     var price = Number($("#confirmItemPrice_" + id).val());
     var totalPrice = qty * price;
     $("#confirmItemTotalPrice_" + id).text(totalPrice);
+}
+
+function getAvailableTableNums(mealNum,mealDate){
+    $("#tableNumError").parent().hide();
+    $("#tableNumError").text("");
+
+    $("#tableNum").empty();
+    $("#tableNum").append('<option value="0">Please Choose</option>');
+    $.ajax({ 
+        url: "/Home/GetAvailableTableNum?mealNum=" + mealNum + "&mealDate=" + mealDate + "&r=" + Math.random(),
+        type: 'get',
+        success: function(data){
+            var tableNums = eval(data.tableNums);
+            if(tableNums.length==0){
+                $("#tableNumError").parent().show();
+                $("#tableNumError").text("").text("Sorry, No available tables");
+            }
+            else{
+                for (var i = 0; i < tableNums.length; i++){
+                    $("#tableNum").append("<option value='"+ tableNums[i] +"'> No. " + tableNums[i] + "</option>");
+                }
+
+            }
+        }
+    });
 }
 
 

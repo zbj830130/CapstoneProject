@@ -33,5 +33,29 @@ namespace Business.RestaurantOnline
 
             return tableNums;
         }
+
+        public List<String> GetTableNumListByTableHeadcount(int tableHeadcount, DateTime mealDate)
+        {
+            int monthNumber = mealDate.Month;
+            int indexDayInMonth = mealDate.Day;
+            List<string> tableNumList = new List<string>();
+
+            var ds = dao.GetTableNumListByTableHeadcount(tableHeadcount, monthNumber);
+
+            if (ds != null && ds.Tables != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    var tableNum = dr["tn"].ToString();
+                    var tableOrderStatus = dr["smn"].ToString();
+                    if (tableOrderStatus[indexDayInMonth - 1] == '1')
+                    {
+                        tableNumList.Add(tableNum);
+                    }
+                } 
+            }
+
+            return tableNumList;
+        }
     }
 }
