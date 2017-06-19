@@ -19,6 +19,7 @@ public class OrderListActivity extends FragmentActivity {
 
     private Button mShoppingCart;
     private Button mCloseBtn;
+    private Button mRefresh;
     private ImageView mClose;
     private RecyclerView orderListRecyclerView;
 
@@ -52,6 +53,7 @@ public class OrderListActivity extends FragmentActivity {
     }
 
     private void initView() {
+        mRefresh = (Button) findViewById(R.id.order_list_refresh);
         mShoppingCart = (Button) findViewById(R.id.order_list_shoppingCart);
         mCloseBtn = (Button) findViewById(R.id.order_list_close_button);
         mClose = (ImageView) findViewById(R.id.order_list_close);
@@ -77,6 +79,14 @@ public class OrderListActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 OrderListActivity.this.finish();
+            }
+        });
+
+        mRefresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OrderListAdapter adapter = new OrderListAdapter(new OrderInfoBuss().getOrderList(), getApplicationContext());
+                orderListRecyclerView.setAdapter(adapter);
             }
         });
     }
