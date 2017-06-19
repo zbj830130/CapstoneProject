@@ -20,6 +20,7 @@ public class OrderListActivity extends FragmentActivity {
     private Button mShoppingCart;
     private Button mCloseBtn;
     private ImageView mClose;
+    private RecyclerView orderListRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,7 @@ public class OrderListActivity extends FragmentActivity {
 
         initView();
 
-        RecyclerView orderListRecyclerView = (RecyclerView) findViewById(R.id.order_list);
+        orderListRecyclerView = (RecyclerView) findViewById(R.id.order_list);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
 
         orderListRecyclerView.setLayoutManager(layoutManager);
@@ -43,6 +44,11 @@ public class OrderListActivity extends FragmentActivity {
 
         OrderListAdapter adapter = new OrderListAdapter(new OrderInfoBuss().getOrderList(), this);
         orderListRecyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     private void initView() {

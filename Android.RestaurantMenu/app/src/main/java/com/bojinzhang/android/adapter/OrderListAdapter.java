@@ -10,7 +10,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.bojinzhang.android.Business.ShoppingCartBuss;
+import com.bojinzhang.android.Interface.AlertDialogReturnInterface;
 import com.bojinzhang.android.Model.OrderInfoModel;
+import com.bojinzhang.android.Util.AlertDialogUtil;
 import com.bojinzhang.android.Util.HttpUtil;
 import com.bojinzhang.android.restaurantmenu.OrderListActivity;
 import com.bojinzhang.android.restaurantmenu.R;
@@ -33,6 +35,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
         TextView mTableNum;
         Button mCheckIn;
         Button mDetail;
+        Button mFinish;
 
         public ViewHolder(View view) {
             super(view);
@@ -41,6 +44,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
             mTableNum = (TextView) view.findViewById(R.id.order_item_tableNum);
             mCheckIn = (Button) view.findViewById(R.id.order_item_checkIn);
             mDetail = (Button) view.findViewById(R.id.order_item_detail);
+            mFinish = (Button) view.findViewById(R.id.order_item_finish);
         }
     }
 
@@ -70,8 +74,10 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
 
         if (model.Status == 1) {
             holder.mCheckIn.setVisibility(View.VISIBLE);
+            holder.mFinish.setVisibility(View.GONE);
         } else {
-            holder.mCheckIn.setVisibility(View.INVISIBLE);
+            holder.mCheckIn.setVisibility(View.GONE);
+            holder.mFinish.setVisibility(View.VISIBLE);
         }
 
         holder.mCheckIn.setOnClickListener(new View.OnClickListener() {
@@ -81,6 +87,26 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
                 HttpUtil.postJson(json, "http://10.0.2.2:8081/api/Order/UpdateOrderStatus");
                 model.Status = 3;
                 notifyItemChanged(position);
+            }
+        });
+
+        holder.mFinish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialogUtil.getClearAllAlertDialog(mContext,
+                        new AlertDialogReturnInterface() {
+                            @Override
+                            public void RefreshActivity() {
+                                String json = "{orderId:" + holder.mOrderId.getText().toString() + ",status:" + 4 + "}";
+                                HttpUtil.postJson(json, "http://10.0.2.2:8081/api/Order/UpdateOrderStatus");
+                                model.Status = 4;
+                                refreshData();
+                                notifyItemRangeChanged(0,getItemCount());
+                                //ToastUtil.ShowToast(ShoppingCartDetailActivity.this, "Shopping Cart Is Cleared");
+                            }
+                        }, "Confirm", "Are you sure to finish this order？");
+
+
             }
         });
 
@@ -106,5 +132,18 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
     @Override
     public int getItemCount() {
         return mOrderList.size();
+    }
+
+    private void refreshData(){
+        ArrayList<OrderInfoModel> modelArrayList = new ArrayList<>();
+        for (OrderInfoModel model: mOrderList) {
+            if(model.Status == 4){
+                continue;
+            }
+
+            modelArrayList.add(model);
+        }
+
+        mOrderList = modelArrayList;
     }
 }

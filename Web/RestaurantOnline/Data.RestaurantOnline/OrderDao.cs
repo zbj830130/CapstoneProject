@@ -422,7 +422,7 @@ namespace Data.RestaurantOnline
         public DataSet GetAvailableOrders()
         {
             var sql = @"SELECT id,orderid,gender,lastName,mealTime,mealNumber,waiterId,tableNumber,status
-                        FROM Orderinfo WHERE status IN(1,3) ";
+                        FROM Orderinfo WHERE status IN(1,3) ORDER BY id DESC";
 
             DataSet ds = null;
             ds = MySqlHelper.GetDataSet(MySqlHelper.Conn, CommandType.Text, sql, null);

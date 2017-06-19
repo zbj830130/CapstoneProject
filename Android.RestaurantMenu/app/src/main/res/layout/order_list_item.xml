@@ -49,6 +49,20 @@
         />
 
     <Button
+        android:id="@+id/order_item_finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@+id/order_item_detail"
+        android:background="@drawable/ol_finish_button"
+        android:text="Finish"
+        android:textColor="@color/redColor"
+        android:textSize="25dp"
+        android:visibility="gone"
+        />
+
+    <Button
         android:id="@+id/order_item_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
