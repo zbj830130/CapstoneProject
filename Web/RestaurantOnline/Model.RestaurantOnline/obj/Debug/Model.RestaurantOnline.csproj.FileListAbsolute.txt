@@ -3,3 +3,4 @@
 /Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Model.RestaurantOnline/obj/Debug/Model.RestaurantOnline.csproj.CoreCompileInputs.cache
 /Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Model.RestaurantOnline/obj/Debug/Model.RestaurantOnline.dll
 /Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Model.RestaurantOnline/obj/Debug/Model.RestaurantOnline.pdb
+/Users/zhangbojin/SC/CapstoneProject/Web/RestaurantOnline/Model.RestaurantOnline/obj/Debug/Model.RestaurantOnline.csprojResolveAssemblyReference.cache

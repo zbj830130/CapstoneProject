@@ -35,6 +35,22 @@
 		    return false;
 		 }
 
+         var lastName = $("#lastName").val();
+         if($.trim(lastName).length >200){
+            $("#lastNameError").parent().show();
+            $("#lastNameError").text("").text("The character length can not be greater than 200");
+            return false;
+         }
+
+         var reg = /^[A-Za-z]{1,200}$/;
+	     if (!reg.test(lastName)) {
+            $("#lastNameError").parent().show();
+            $("#lastNameError").text("").text("Please input English charaters");
+	        return false;
+         }
+
+         var flag = /[a-zA-Z]+/.test(lastName);
+
 		 var mealTime = $("#mealTime").val();
 		 if($.trim(mealTime).length ==0){
 		    $("#mealTimeError").parent().show();
@@ -82,6 +98,10 @@
 
             return false;
         }
+   });
+
+   $(".goBack").click(function(){
+        window.location.href="Index";
    });
 });
 
@@ -208,10 +228,10 @@ function confirmGetShoppingCartTotalInfo(id,qty){
     singleItemTotalPrice(id,qty);
     
     $.ajax({ 
-        url: "/Home/OperatShoppingCart?id=" + id + "&qty=" + qty + "&r=" + Math.random(),
+        url: "/Home/OperatShoppingCartForOrderConfirm?id=" + id + "&qty=" + qty + "&r=" + Math.random(),
         type: 'get',
         success: function(data){
-            $("#confirmShoppingCartTotalCount").text(data.itemCount);
+            $("#confirmShoppingCartTotalCount").text(data.totalItems);
             $("#confirmShoppingCartTotalPrice").text(data.totalPrice);
             $("#submitPrice").text(data.totalPrice);
           }

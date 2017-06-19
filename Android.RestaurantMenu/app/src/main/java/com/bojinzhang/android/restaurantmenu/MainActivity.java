@@ -79,7 +79,8 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
+        preTotalPrice = ShoppingCartBuss.getInstance().getTotalPrice();
+        refresh();
 
     }
 
@@ -135,15 +136,18 @@ public class MainActivity extends FragmentActivity {
         ImageView shoppingCart_new = new ImageView(this);
         ImageView shoppingCart_details = new ImageView(this);
         ImageView shoppingCart_removeItems = new ImageView(this);
+        ImageView shoppingCart_allOrders = new ImageView(this);
         shoppingCart_new.setImageDrawable(getResources().getDrawable(R.drawable.ic_shopping_cart_new_black_72dp));
         shoppingCart_details.setImageDrawable(getResources().getDrawable(R.drawable.ic_shopping_cart_details_black_72dp));
         shoppingCart_removeItems.setImageDrawable(getResources().getDrawable(R.drawable.ic_shopping_cart_remove_black_72dp));
+        shoppingCart_allOrders.setImageDrawable(getResources().getDrawable(R.drawable.ic_restaurant_menu_black_72dp));
 
 
-        fabMenu = new FloatingActionMenu.Builder(this)
+        fabMenu = new FloatingActionMenu.Builder(this).setStartAngle(150).setEndAngle(270)
                 .addSubActionView(rLSubBuilder.setContentView(shoppingCart_new).build(), 96, 96)
                 .addSubActionView(rLSubBuilder.setContentView(shoppingCart_details).build(), 96, 96)
                 .addSubActionView(rLSubBuilder.setContentView(shoppingCart_removeItems).build(), 96, 96)
+                .addSubActionView(rLSubBuilder.setContentView(shoppingCart_allOrders).build(), 96, 96)
                 .attachTo(fab).build();
 
 
@@ -187,6 +191,15 @@ public class MainActivity extends FragmentActivity {
                                 ToastUtil.ShowToast(MainActivity.this, "Shopping Cart Is Cleared");
                             }
                         }, "Confirm", "Are you sure to clear all items？");
+            }
+        });
+
+        shoppingCart_allOrders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, OrderListActivity.class);
+                startActivity(intent);
             }
         });
     }

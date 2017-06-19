@@ -60,8 +60,11 @@
 
 .operation {
     margin-right: 2vw;
-    cursor:pointer;
-    color:red;
+    cursor: pointer;
+    color: red;
+    border: 1px solid #f4a40e;
+    padding: 2px;
+    border-radius: 5px;
 }
 
 .marginRight2vw {

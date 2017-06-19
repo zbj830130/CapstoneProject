@@ -9,7 +9,12 @@
 
     $("#loginButton").click(function(){
         window.location.href = "/User/Index?callbackUrl=http://127.0.0.1:8081";
-    })
+    });
+
+    $("#sendMessageBtn").click(function(){
+        sendMessage();
+    });
+
 });
 
 function GetUserName(){
@@ -50,4 +55,12 @@ function logout(){
                 }
             }
         });
+}
+
+function sendMessage(){
+    var subject = $("#inputSubject").val();
+        var message = $("#inputMessage").val();
+        var mailtoAttr = "mailto:zbj830130@gmail.com?subject=" + subject + "&body=" + message;
+
+        $("#sendMessageBtn").attr("href", mailtoAttr);
 }

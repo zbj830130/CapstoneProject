@@ -39,67 +39,27 @@ namespace Web.RestaurantOnline.Controllers
 
         public ActionResult OperatShoppingCart(int id, int qty)
         {
-            DishesBuss buss = new DishesBuss();
-            List<ShoppingCartItem> shoppingCartItems = null;
-
-            var jser = new JavaScriptSerializer();
-            if (Request.Cookies["shoppingCart"] != null)
-            {
-                var cookieJson = Request.Cookies["shoppingCart"].Value;
-                shoppingCartItems = jser.Deserialize<List<ShoppingCartItem>>(cookieJson);
-            }
-
-            if (shoppingCartItems == null || shoppingCartItems.Count == 0)
-            {
-                shoppingCartItems = new List<ShoppingCartItem>();
-            }
-
-            var isContaint = false;
-            var index = 0;
-            foreach (var item in shoppingCartItems)
-            {
-                if (item.ItemID == id && qty > 0)
-                {
-                    item.Qty = qty;
-                    isContaint = true;
-                    break;
-                }
-
-                if (item.ItemID == id && qty == 0)
-                {
-                    isContaint = true;
-                    break;
-                }
-
-                index++;
-            }
-
-            if (qty == 0)
-            {
-                shoppingCartItems.RemoveAt(index);
-            }
-
-
-            if (isContaint == false)
-            {
-                var dishInfo = buss.GetSingleDishes(id);
-
-                ShoppingCartItem cartitem = new ShoppingCartItem();
-                cartitem.ItemID = id;
-                cartitem.Qty = qty;
-                cartitem.EName = dishInfo.EName;
-                //cartitem.OName = dishInfo.OtherName;
-                cartitem.Price = dishInfo.Price;
-
-                shoppingCartItems.Add(cartitem);
-            }
-
-            var json = jser.Serialize(shoppingCartItems);
-
-            Response.Cookies["shoppingCart"].Value = json;
-            Response.Cookies["shoppingCart"].Expires = DateTime.Now.AddHours(1);
+            var shoppingCartItems = OperateShoppingCart(id,qty);
 
             return RedirectToAction("LoadMiniShoppingCart");
+        }
+
+        public JsonResult OperatShoppingCartForOrderConfirm(int id, int qty)
+        {
+            var shoppingCartItems = OperateShoppingCart(id, qty);
+
+            var totalPrice = decimal.Zero;
+            var totalItems = 0;
+
+            foreach (var item in shoppingCartItems)
+            {
+                totalPrice += (item.Price * item.Qty);
+                totalItems += item.Qty;
+            }
+
+            var result = new { totalPrice = totalPrice, totalItems = totalItems };
+            return Json(result, JsonRequestBehavior.AllowGet);
+
         }
 
         public ActionResult LoadMiniShoppingCart()
@@ -237,6 +197,70 @@ namespace Web.RestaurantOnline.Controllers
                     }
                 }
             }
+
+            return shoppingCartItems;
+        }
+
+        private List<ShoppingCartItem> OperateShoppingCart(int id, int qty){
+            DishesBuss buss = new DishesBuss();
+            List<ShoppingCartItem> shoppingCartItems = null;
+
+            var jser = new JavaScriptSerializer();
+            if (Request.Cookies["shoppingCart"] != null)
+            {
+                var cookieJson = Request.Cookies["shoppingCart"].Value;
+                shoppingCartItems = jser.Deserialize<List<ShoppingCartItem>>(cookieJson);
+            }
+
+            if (shoppingCartItems == null || shoppingCartItems.Count == 0)
+            {
+                shoppingCartItems = new List<ShoppingCartItem>();
+            }
+
+            var isContaint = false;
+            var index = 0;
+            foreach (var item in shoppingCartItems)
+            {
+                if (item.ItemID == id && qty > 0)
+                {
+                    item.Qty = qty;
+                    isContaint = true;
+                    break;
+                }
+
+                if (item.ItemID == id && qty == 0)
+                {
+                    isContaint = true;
+                    break;
+                }
+
+                index++;
+            }
+
+            if (qty == 0)
+            {
+                shoppingCartItems.RemoveAt(index);
+            }
+
+
+            if (isContaint == false)
+            {
+                var dishInfo = buss.GetSingleDishes(id);
+
+                ShoppingCartItem cartitem = new ShoppingCartItem();
+                cartitem.ItemID = id;
+                cartitem.Qty = qty;
+                cartitem.EName = dishInfo.EName;
+                //cartitem.OName = dishInfo.OtherName;
+                cartitem.Price = dishInfo.Price;
+
+                shoppingCartItems.Add(cartitem);
+            }
+
+            var json = jser.Serialize(shoppingCartItems);
+
+            Response.Cookies["shoppingCart"].Value = json;
+            Response.Cookies["shoppingCart"].Expires = DateTime.Now.AddHours(1);
 
             return shoppingCartItems;
         }

@@ -23,7 +23,7 @@
 
 .goBack {
     display: inline-block;
-    text-align: center;
+    text-align: right;
     min-height: 100%;
     width: 40%;
     color: gray;
