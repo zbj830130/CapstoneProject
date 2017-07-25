@@ -1,13 +1,9 @@
 ﻿@model Model.RestaurantOnline.OrderResultModel
+@{
+    Layout = "~/Views/Shared/_OrderProgress.cshtml";
+}
 <link href="/Content/bootstrap-directional-buttons.css" rel="stylesheet" type="text/css" />
 <link href="/Content/OrderCompleted.css" rel="stylesheet" type="text/css" />
-<div class="confirmBanner width98">
-    <div>
-        <a class="btn btn-success btn-arrow-right btn-lg width25vw">1st: Choose Dishes(Home)</a>
-        <a class="btn btn-success btn-arrow-right btn-lg width25vw">2nd: Confirm Order</a>
-        <a  class="btn btn-primary btn-arrow-right btn-lg width47vw">3rd: Complete Order</a>
-    </div>
-</div>
 <div class='orderResult div-width-90'>
 	@if(Model.IsSuccess == true){
 	    <div class="alert alert-success rightMessage width98" role="alert">
@@ -26,7 +22,7 @@
 	}
 <script type="text/javascript">
     $(function(){
-        $("#leftNavbar").children().removeClass("active");
+        caculateProgressStep(3);
     });
 </script>
 </div>

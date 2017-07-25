@@ -1,14 +1,10 @@
-﻿﻿<link href="/Content/confirmOrder.css" rel="stylesheet" type="text/css" />
+﻿@{
+    Layout = "~/Views/Shared/_OrderProgress.cshtml";
+}
+
+﻿<link href="/Content/confirmOrder.css" rel="stylesheet" type="text/css" />
 <link href="/Content/bootstrap-directional-buttons.css" rel="stylesheet" type="text/css" />
 <link href="/Content/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
-<div class="confirmBanner width98">
-	<div>
-		<a class="btn btn-success btn-arrow-right btn-lg width25vw">1st: Choose Dishes(Home)</a>
-		<a class="btn btn-primary btn-arrow-right btn-lg width47vw">2nd: Confirm Order</a>
-		<a  class="btn btn-danger btn-arrow-right btn-lg width25vw">3rd: Complete Order</a>
-    </div>
-</div>
-
 
 <div class="confirmOrderContainer">
     <div class="userInfo">
@@ -18,7 +14,7 @@
         <form class="form-horizontal" role="form" id="userInfo" action="/Home/OrderCompleted" method="post">
 			<div class="form-group">
                 <label class="col-sm-3 control-label">Gender</label>
-                <div class="col-sm-8">
+                <div class="col-sm-7">
                     <label class="radio-inline"><input type="radio" id="gender1" name="gender" value="Mr" checked>Mr.</label>
 					<label class="radio-inline"><input type="radio" id ="gender2" name="gender" value="Ms">Ms.</label> 
                     <div class="alert alert-danger errorDiv">
@@ -29,7 +25,7 @@
             </div>
 			<div class="form-group">
 			    <label for="lastName" class="col-sm-3 control-label">Last Name</label>
-			    <div class="col-sm-8">
+			    <div class="col-sm-7">
 			        <input type="text" name="lastName" class="form-control" id="lastName" placeholder= "Please input last name">
 					<div class="alert alert-danger errorDiv">
                         <span id="lastNameError"></span>
@@ -39,20 +35,20 @@
 			</div>
 			<div class="form-group">
                 <label class="col-sm-3 control-label">Meal Date</label>
-                    <div class="col-sm-8">
-                       <div class="input-append date" id="dp3" data-date='@DateTime.Now.ToString("yyyy-MM-dd")' data-date-format="yyy-mm-dd">
-	                        <input name="mealTime" id="mealTime" class="span2" size="16" value='@DateTime.Now.ToString("yyyy-MM-dd")' type="text">
-						<i class="glyphicon glyphicon-calendar calendarIcon"></i>
-						<div class="alert alert-danger errorDiv">
-                            <span id="mealTimeError"></span>
-                        </div>
+                    <div class="col-sm-7">
+                       <div class="input-append date form_datetime" id="dp3" data-date='@DateTime.Now.ToString("yyyy-MM-dd")' data-date-format="yyy-mm-dd">
+	                        <input name="mealTime" id="mealTime" class="span2" size="16" value='@DateTime.Now.ToString("yyyy-MM-dd")' type="text" onfocus="this.blur()">
+						    <span><i class="glyphicon glyphicon-calendar calendarIcon"></i></span>
+						    <div class="alert alert-danger errorDiv">
+                                <span id="mealTimeError"></span>
+                            </div>
                         </div>
                     </div>
                 <div class="col-sm-1"></div>
             </div>
 			<div class="form-group">
-                <label class="col-sm-3 control-label">Meal Number</label>
-                    <div class="col-sm-8">
+                <label class="col-sm-3 control-label">People Number</label>
+                    <div class="col-sm-7">
                         
 					<select id="mealNumDw" name="mealNumber">
                         <option value=0 selected="selected" class="selectpicker">Please Choose</option>
@@ -65,7 +61,7 @@
             </div>
 			<div class="form-group">
                 <label class="col-sm-3 control-label">Table Number</label>
-                    <div class="col-sm-8">
+                    <div class="col-sm-7">
                         
                     <select id="tableNum" name="tableNum">
                         <option value=0 selected="selected" class="selectpicker">Please Choose</option>
@@ -89,7 +85,7 @@
 	</div>
 	<div class="confirmShoppingCart">
 		<div class="confirmShoppingCartTitle">
-	        <div class="width90">
+	        <div class="div-width-90">
 				<div class="title1">
 					<span>Order Details</span>
 				</div>
@@ -102,10 +98,10 @@
 		
 		</div>
 		<div class="confirmShoppingCartSummary">
-            <div class="width90 confirmShoppingCartTotalPrice">
+            <div class="div-width-90 confirmShoppingCartTotalPrice">
                 <span>$</span><span id="confirmShoppingCartTotalPrice">0</span>
 			</div>
-			<div class="width90 confirmShoppingCartTotalCount">
+			<div class="div-width-90 confirmShoppingCartTotalCount">
                 <span id="confirmShoppingCartTotalCount">0</span>
 				<span>Items</span>
 			</div>

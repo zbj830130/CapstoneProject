@@ -35,11 +35,9 @@
 			<div class="row">
 				@foreach(var cm in Model)
 				{
-				    <div id="@cm.Id" class="col-xs-3">
+				    <div id="@cm.Id" class="col-xs-4">
 					    <div class="catgoryItem">
-							<span class="eName">@cm.EName</span>
-							<br>
-							<span class="oName">@cm.OtherName</span>
+							<span class="eName">@cm.EName</span><span class="oName">(@cm.OtherName)</span>
 						</div>
 				    </div>;
 				}

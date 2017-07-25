@@ -17,11 +17,11 @@
 			            <span class="confirmShoppingCartItemOName">@item.OName</span>
                     </div>
                     <div class="confirmShoppingCarItemOperation">
-						<label id="confirmItemMinu_@item.ItemID" onclick="confirmMinuQty(@item.ItemID)" class="btn">
+						<label id="confirmItemMinu_@item.ItemID" onclick="confirmMinuQty(@item.ItemID)" class="btn countConfirmShoppingCartOp">
 			                    <i class="fa fa-minus-square fa-2x" aria-hidden="true"></i>
 			            </label>
-			            <label id="confirmItemQty_@item.ItemID">@item.Qty</label>
-			            <label id="confirmItemAdd_@item.ItemID" onclick="confirmAddQty(@item.ItemID)" class="btn">
+			            <label id="confirmItemQty_@item.ItemID" class="countConfirmShoppingCart">@item.Qty</label>
+			            <label id="confirmItemAdd_@item.ItemID" onclick="confirmAddQty(@item.ItemID)" class="btn countConfirmShoppingCartOp">
 				            <i class="fa fa-plus-square fa-2x" aria-hidden="true"></i>
 			            </label>
                     </div>

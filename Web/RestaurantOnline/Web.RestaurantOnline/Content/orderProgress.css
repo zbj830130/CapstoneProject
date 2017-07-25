@@ -1,0 +1,123 @@
+﻿.container {
+    min-height: 2vw;
+}
+
+.nav-user-info {
+    width: 96%;
+}
+
+.seperation-line {
+    border-bottom: 1px solid #027ecb;
+    width:100%;
+    height:1px;
+}
+
+.nav-user-info ul {
+    height: 2vw;
+}
+
+.nav-user-info ul > li {
+    height: 2vw;
+}
+
+    .nav-user-info ul > li > a, .nav-user-info ul > li > span {
+        padding-top: 0.1vw;
+        padding-bottom: 0.1vw;
+        font-size: 0.8vw;
+        color:white;
+        padding-right:3px;
+        display:inline-block;
+        line-height:20px;
+    }
+
+.nav-title-and-progress {
+    height: 7vw;
+}
+
+.nav-title {
+    height: 100%;
+    vertical-align: middle;
+}
+
+.navbar-brand {
+    margin-top:1.5vw;
+    font-size:3vw;
+    margin-right:1vw;
+}
+
+.confirmaion {
+    margin-top: 3vw;
+    font-size: 1.5vw;
+    height: 1.5vw;
+    border-left: 1px solid #ffffff;
+    padding: 0;
+    padding-left:0.5vw;
+}
+
+.nav-progress {
+    height:100%;
+    width:60%;
+    padding-top:1.1vw;
+}
+
+
+.line {
+    border-bottom: 1px solid #EF9310;
+    padding-bottom: 20px;
+    width: 100%;
+    left: 15px;
+    position: relative;
+}
+
+.stepText1 {
+    color:white;
+    text-align: left;
+    left: -15px;
+}
+
+.stepText2 {
+    color: white;
+    text-align: center;
+}
+
+.stepText3 {
+    color: white;
+    text-align: right;
+    right: -15px;
+}
+
+.step {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #EF9310;
+    background: white;
+    border-radius: 100px;
+    margin-top: 30px;
+    transition: 0.4s;
+}
+
+.step1 {
+    margin-top: -10px;
+    float: left;
+}
+
+.step2 {
+    margin: 0 auto;
+    margin-top: -10px;
+}
+
+.step3 {
+    float: right;
+    margin-top: -10px;
+}
+
+.activeStep {
+    background: #EF9310;
+}
+
+
+.autoCenter {
+    margin: 50px auto;
+    width: 345px;
+    box-sizing: border-box;
+}

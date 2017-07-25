@@ -8,7 +8,7 @@
     });
 
     $("#loginButton").click(function(){
-        window.location.href = "/User/Index?callbackUrl=http://127.0.0.1:8081";
+        window.location.href = "/User/Index?callbackUrl=" + window.location.href;
     });
 
     $("#sendMessageBtn").click(function(){
@@ -43,10 +43,7 @@ function logout(){
             url: '/User/Logout',
             success: function (data) {
                 if (data.result == true) {
-                    $("#loginButton").show();
-                    $("#userLogout").hide();
-                    $("#loginUserName").hide();
-                    $("#loginUserName").text("");
+                   window.location="/User/Index?callbackUrl=" + window.location.href;
                 } else {
                     $("#loginButton").hide();
                     $("#userLogout").show();
@@ -63,4 +60,18 @@ function sendMessage(){
         var mailtoAttr = "mailto:zbj830130@gmail.com?subject=" + subject + "&body=" + message;
 
         $("#sendMessageBtn").attr("href", mailtoAttr);
+}
+
+//caculate the progress bar in order-confirm-page and order-completed-page
+function caculateProgressStep(stepNo){
+    switch(stepNo){
+        case 2:
+            $(".step2").addClass("activeStep");
+            break;
+        case 3:
+            $(".step2").addClass("activeStep");
+            $(".step3").addClass("activeStep");
+            $("#crumbsName").text("Order completed");
+            break;
+    }
 }

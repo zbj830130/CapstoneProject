@@ -1,43 +1,50 @@
 ﻿
 .navbar-default {
-    background-color: #ffffff;
-    border-color: #ffffff;
-    border-bottom-color: #f4a40e;
+    border-radius: 0px;
+    background-color: #1e89e0;
+    border: 0;
+}
+
+navbar-header {
+    margin-top: 10px;
 }
 
 .navbar-default .navbar-brand {
-    color: #000000;
+    color: #ffffff;
 }
 
     .navbar-default .navbar-brand:hover,
     .navbar-default .navbar-brand:focus {
-        color: #f4a40e;
+        color: #ffffff;
+        background-color: #1e89e0;
     }
 
 .navbar-default .navbar-text {
-    color: #000000;
+    color: #ffffff;
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #000000;
+    color: #ffffff;
+    border-radius:0;
 }
 
     .navbar-default .navbar-nav > li > a:hover,
     .navbar-default .navbar-nav > li > a:focus {
-        color: #f4a40e;
+        color: #ffffff;
+        background-color: #26a2ff;
     }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    color: #f4a40e;
-    background-color: #ffffff;
+    color: #ffffff;
+    background-color: #006bc7;
 }
 
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-    color: #f4a40e;
+    color: #1e89e0;
     background-color: #ffffff;
 }
 
@@ -64,7 +71,7 @@
 }
 
     .navbar-default .navbar-link:hover {
-        color: #f4a40e;
+        color: #1e89e0;
     }
 
 @media (max-width: 767px) {
@@ -74,13 +81,13 @@
 
         .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
         .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-            color: #f4a40e;
+            color: #26a2ff;
         }
 
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
     .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-        color: #f4a40e;
+        color: #1e89e0;
         background-color: #ffffff;
     }
 }

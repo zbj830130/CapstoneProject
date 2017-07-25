@@ -1,21 +1,21 @@
 ﻿<Properties StartupConfiguration="{7E4192ED-AF02-488F-A799-2A81D6DDD812}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Web.RestaurantOnline/Controllers/WebApi/WaiterController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Business.RestaurantOnline/OrderBuss.cs">
     <Files>
-      <File FileName="Web.RestaurantOnline/Controllers/HomeController.cs" Line="63" Column="10" />
-      <File FileName="Web.RestaurantOnline/Controllers/UserController.cs" Line="94" Column="18" />
-      <File FileName="Business.RestaurantOnline/OrderBuss.cs" Line="218" Column="39" />
-      <File FileName="Data.RestaurantOnline/OrderDao.cs" Line="422" Column="24" />
-      <File FileName="Web.RestaurantOnline/Scripts/orderList.js" Line="103" Column="21" />
-      <File FileName="Web.RestaurantOnline/Views/Shared/_Layout.cshtml" Line="63" Column="45" />
-      <File FileName="Web.RestaurantOnline/Scripts/confirmOrder.js" Line="236" Column="51" />
-      <File FileName="Web.RestaurantOnline/Scripts/Index.js" Line="149" Column="16" />
-      <File FileName="Web.RestaurantOnline/Controllers/LoginAttribute.cs" Line="11" Column="16" />
-      <File FileName="Web.RestaurantOnline/Content/orderList.css" Line="65" Column="30" />
-      <File FileName="Web.RestaurantOnline/Controllers/WebApi/CategoryController.cs" Line="1" Column="1" />
-      <File FileName="Web.RestaurantOnline/Controllers/WebApi/DishController.cs" Line="1" Column="1" />
-      <File FileName="Web.RestaurantOnline/Controllers/WebApi/OrderController.cs" Line="99" Column="23" />
-      <File FileName="Web.RestaurantOnline/Controllers/WebApi/TableController.cs" Line="23" Column="38" />
-      <File FileName="Web.RestaurantOnline/Controllers/WebApi/WaiterController.cs" Line="1" Column="1" />
+      <File FileName="Web.RestaurantOnline/Views/Home/ConfirmOrder.cshtml" Line="41" Column="27" />
+      <File FileName="Web.RestaurantOnline/Scripts/confirmOrder.js" Line="112" Column="17" />
+      <File FileName="Web.RestaurantOnline/Views/Shared/_OrderProgress.cshtml" Line="5" Column="26" />
+      <File FileName="Web.RestaurantOnline/Content/orderProgress.css" Line="6" Column="16" />
+      <File FileName="Web.RestaurantOnline/Views/Home/OrderCompleted.cshtml" Line="25" Column="31" />
+      <File FileName="Web.RestaurantOnline/Views/Shared/_Layout.cshtml" Line="5" Column="26" />
+      <File FileName="Web.RestaurantOnline/Scripts/main.js" Line="43" Column="31" />
+      <File FileName="Business.RestaurantOnline/TableBuss.cs" Line="27" Column="35" />
+      <File FileName="Web.RestaurantOnline/Views/Home/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Web.RestaurantOnline/Scripts/Index.js" Line="239" Column="39" />
+      <File FileName="Web.RestaurantOnline/Controllers/HomeController.cs" Line="152" Column="53" />
+      <File FileName="Web.RestaurantOnline/Controllers/UserController.cs" Line="117" Column="58" />
+      <File FileName="Web.RestaurantOnline/Views/Shared/_UserLayout.cshtml" Line="49" Column="31" />
+      <File FileName="Web.RestaurantOnline/Controllers/LoginAttribute.cs" Line="1" Column="1" />
+      <File FileName="Business.RestaurantOnline/OrderBuss.cs" Line="39" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

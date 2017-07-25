@@ -160,6 +160,8 @@
     <Content Include="Views\User\GetCanceledOrders.cshtml" />
     <Content Include="Views\User\GetFinishedOrders.cshtml" />
     <Content Include="Views\User\GetOrderDetails.cshtml" />
+    <Content Include="Views\Shared\_OrderProgress.cshtml" />
+    <Content Include="Content\orderProgress.css" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fonts\fontawesome-webfont.woff2" />

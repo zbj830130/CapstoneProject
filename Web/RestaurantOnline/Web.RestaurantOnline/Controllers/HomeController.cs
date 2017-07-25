@@ -14,6 +14,8 @@ namespace Web.RestaurantOnline.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Title = "Bojin's Restaurant Booking Online";
+            
             CategoriesBuss categoriesBuss = new CategoriesBuss();
             List<CategoryModel> categories = categoriesBuss.GetCategories();
 
@@ -97,6 +99,7 @@ namespace Web.RestaurantOnline.Controllers
         [LoginAttribute("/Home/ConfirmOrder")]
         public ActionResult ConfirmOrder()
         {
+            ViewBag.Title = "Bojin's Restaurant Booking Online";
             return View();
         }
 
@@ -112,6 +115,7 @@ namespace Web.RestaurantOnline.Controllers
         public ActionResult OrderCompleted(string gender, string lastName, string mealTime,
                                            string mealNumber, string tableNum)
         {
+            ViewBag.Title = "Bojin's Restaurant Booking Online";
             var orderInfo = new OrderInfo();
             orderInfo.Gender = gender;
             orderInfo.LastName = lastName;

@@ -1,4 +1,6 @@
 ﻿﻿$(function(){
+    caculateProgressStep(2);
+
     formElementsBindEvent();
 
 	loadShoppingCartInfo();
@@ -70,7 +72,7 @@
 
          if(mealNum==0){
             $("#mealNumError").parent().show();
-            $("#mealNumError").text("").text("Please Choose Meal Number");
+            $("#mealNumError").text("").text("Please Choose People Number");
             return false;
          }
 

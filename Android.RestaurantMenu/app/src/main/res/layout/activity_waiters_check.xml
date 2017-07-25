@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/textview_no_left_border"
                     android:gravity="center"
-                    android:text="Table Headcount"
+                    android:text="People Number"
                     android:textColor="@color/WaiterConfirmTitleBorderColor"
                     android:textSize="20dp"
                     />

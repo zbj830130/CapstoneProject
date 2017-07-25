@@ -1,5 +1,6 @@
 ﻿html,
 body {
+    margin:0;
     height: 100%;
     font-family: "maison_neuebold", Verdana, Arial, sans-serif;
     font-size: 1vw;
@@ -8,6 +9,14 @@ body {
 
 #userLogout {
     
+}
+
+.font-size-1point1vw {
+    font-size: 1.1vw;
+}
+
+.font-size-1point2vw {
+    font-size: 1.2vw;
 }
 
 .clearfix:after {
@@ -90,25 +99,25 @@ body {
 
 .width98 {
     width: 98%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .width25vw {
     width: 25vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .width47vw {
     width: 47vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.confirmBanner {
-    height: 6vw;
-    margin-top: -20px;
-    font-size:0.5vw;
+.margin-button-10vh {
+    margin-bottom: 10vh;
 }
-
-    .confirmBanner div {
-        float: right;
-    }
 
 .textaligncenter {
     text-align: center;
@@ -206,3 +215,88 @@ body {
     text-align: center;
     font-size: 2vw;
 }
+
+
+.fa-2x {
+    font-size: 2vw;
+}
+
+
+.stepBar {
+    position: relative;
+    list-style: none;
+    margin: -2em 0 1em;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    *zoom: 1;
+}
+
+    .stepBar .step {
+        position: relative;
+        float: left;
+        display: inline-block;
+        line-height: 40px;
+        padding: 0 40px 0 20px;
+        background-color: #eee;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+        .stepBar .step:before, .stepBar .step:after {
+            position: absolute;
+            left: -15px;
+            display: block;
+            content: '';
+            background-color: #eee;
+            border-left: 4px solid #FFF;
+            width: 20px;
+            height: 20px;
+        }
+
+        .stepBar .step:after {
+            top: 0;
+            -moz-transform: skew(30deg);
+            -ms-transform: skew(30deg);
+            -webkit-transform: skew(30deg);
+            transform: skew(30deg);
+        }
+
+        .stepBar .step:before {
+            bottom: 0;
+            -moz-transform: skew(-30deg);
+            -ms-transform: skew(-30deg);
+            -webkit-transform: skew(-30deg);
+            transform: skew(-30deg);
+        }
+
+            .stepBar .step:first-child:before, .stepBar .step:first-child:after {
+                content: none;
+            }
+
+        .stepBar .step.current {
+            color: #FFF;
+            background-color: #5cb85c;
+        }
+
+            .stepBar .step.current:before, .stepBar .step.current:after {
+                background-color: #5cb85c;
+            }
+
+    .stepBar.step2 .step {
+        width: 50%;
+    }
+
+    .stepBar.step3 .step {
+        width: 33.333%;
+    }
+
+    .stepBar.step4 .step {
+        width: 25%;
+    }
+
+    .stepBar.step5 .step {
+        width: 20%;
+    }

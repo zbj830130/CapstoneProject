@@ -13,23 +13,23 @@
 	        <div class="dishDetail">
 		        @if(dm.EName.Length > 50)
                 {
-                    <span class="eName">@dm.EName.Substring(0,50)...</span>
+                    <span class="eName font-size-1point2vw">@dm.EName.Substring(0,50)...</span>
                 }
                 else
                 {
-                    <span class="eName">@dm.EName</span>
+                    <span class="eName font-size-1point2vw">@dm.EName</span>
                 }
                 <br>
                 @if(dm.OtherName.Length > 50)
                 {
-                    <span class="oName">@dm.OtherName.Substring(0,50)...</span>
+                    <span class="oName font-size-1point2vw">@dm.OtherName.Substring(0,50)...</span>
                 }
                 else
                 {
-                    <span class="oName">@dm.OtherName</span>
+                    <span class="oName font-size-1point2vw">@dm.OtherName</span>
                 }
 	            <br>
-	            <span id="dishPrice_@dm.Id" class="dishPrice">$@dm.Price</span>
+	            <span id="dishPrice_@dm.Id" class="dishPrice font-size-1point1vw">$@dm.Price</span>
 	            <div class="shoppingOpertaion">
 		            <button type="button" onclick="buyButtonClick('@dm.Id')" id="buy_@dm.Id" class="btn btn-inverse shoppingButton">Buy</button>
                     <div id="shoppingCount_@dm.Id" class="shoppingCount">

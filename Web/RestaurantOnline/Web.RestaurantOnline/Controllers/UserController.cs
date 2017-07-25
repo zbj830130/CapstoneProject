@@ -14,6 +14,7 @@ namespace Web.RestaurantOnline.Controllers
 
         public ActionResult Index(string callbackUrl = null)
         {
+            ViewBag.Title = "Bojin's Restaurant Booking Online";
             ViewData["callbackUrl"] = callbackUrl;
             return View();
         }
@@ -36,6 +37,13 @@ namespace Web.RestaurantOnline.Controllers
         {
             if (buss.CreateUser(reg_username, reg_password) == true)
             {
+                if (Request.Cookies["shoppingCart"] != null)
+                {
+                    HttpCookie aCookie = Request.Cookies["shoppingCart"];
+                    aCookie.Expires = DateTime.Now.AddDays(-1);
+                    Response.Cookies.Add(aCookie);
+                }
+
                 var userId = buss.IsUserNameAndPwdCorrect(reg_username, reg_password);
                 Session["userId"] = userId;
                 Session["userName"] = reg_username;
@@ -84,6 +92,13 @@ namespace Web.RestaurantOnline.Controllers
 
         public JsonResult Logout()
         {
+            if (Request.Cookies["shoppingCart"] != null)
+	        {
+	            HttpCookie aCookie = Request.Cookies["shoppingCart"];
+	            aCookie.Expires = DateTime.Now.AddDays(-1);
+	            Response.Cookies.Add(aCookie);
+	        }
+
             Session["userId"] = null;
             Session["userName"] = null;
 
@@ -94,6 +109,7 @@ namespace Web.RestaurantOnline.Controllers
         [LoginAttribute("/User/OrderList")]
         public ActionResult OrderList()
         {
+            ViewBag.Title = "Bojin's Restaurant Booking Online";
             return View();
         }
 
